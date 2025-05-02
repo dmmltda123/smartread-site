@@ -180,3 +180,80 @@ function updateCarousel() {
 document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
 });
+
+// Funções do Fluxograma
+function ativarBloco(id) {
+    const bloco = document.getElementById(id);
+    if (bloco) {
+        bloco.classList.add('active');
+    }
+}
+
+function desativarBloco(id) {
+    const bloco = document.getElementById(id);
+    if (bloco) {
+        bloco.classList.remove('active');
+    }
+}
+
+function ativarLinha(id) {
+    const linha = document.getElementById(id);
+    if (linha) {
+        linha.classList.add('active');
+    }
+}
+
+// Função para posicionar linha entre dois blocos
+function posicionarLinha(linhaId, blocoOrigemId, blocoDestinoId) {
+    const origem = document.getElementById(blocoOrigemId);
+    const destino = document.getElementById(blocoDestinoId);
+    const linha = document.getElementById(linhaId);
+    
+    if (!origem || !destino || !linha) return;
+    
+    const origemRect = origem.getBoundingClientRect();
+    const destinoRect = destino.getBoundingClientRect();
+    
+    // Calcula o centro dos blocos
+    const origemX = origemRect.left + origemRect.width / 2;
+    const origemY = origemRect.top + origemRect.height / 2;
+    const destinoX = destinoRect.left + destinoRect.width / 2;
+    const destinoY = destinoRect.top + destinoRect.height / 2;
+    
+    // Calcula o ângulo e comprimento da linha
+    const angulo = Math.atan2(destinoY - origemY, destinoX - origemX);
+    const comprimento = Math.sqrt(
+        Math.pow(destinoX - origemX, 2) + Math.pow(destinoY - origemY, 2)
+    );
+    
+    // Posiciona e rotaciona a linha
+    linha.style.width = `${comprimento}px`;
+    linha.style.left = `${origemX}px`;
+    linha.style.top = `${origemY}px`;
+    linha.style.transform = `rotate(${angulo}rad)`;
+}
+
+// Block 1 animation
+document.addEventListener('DOMContentLoaded', () => {
+    const bloco1Video = document.querySelector('#bloco1 .bloco-animation');
+    
+    if (bloco1Video) {
+        // Reset and play video when it becomes visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    bloco1Video.currentTime = 0;
+                    bloco1Video.play().catch(console.error);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(bloco1Video);
+
+        // Loop the video
+        bloco1Video.addEventListener('ended', () => {
+            bloco1Video.currentTime = 0;
+            bloco1Video.play().catch(console.error);
+        });
+    }
+});

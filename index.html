@@ -6,17 +6,40 @@
     <title>Smart Read - Extração inteligente de documentos</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/favicon.ico">
+    <style>
+        .section-title h2 + * {
+            margin-top: 0 !important;
+        }
+
+        .fluxograma-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fluxograma-img {
+            height: 100%;
+            width: auto;
+            max-height: 500px; /* ajuste conforme necessário */
+            object-fit: contain;
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <a href="#"><img src="assets/logo.png" alt="Smart Read Logo"></a>
+                <a href="#" class="logo-link">
+                    <img src="assets/logo-smartread.png" alt="Smart Read Logo" class="logo-img">
+                </a>
             </div>
             <ul>
                 <li><a href="#como-funciona">Como funciona</a></li>
                 <li><a href="#integracoes">Integrações</a></li>
-                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#solucoes">Mais recursos</a></li>
                 <li><a href="#precos">Preços</a></li>
             </ul>
             <div class="auth-buttons">
@@ -30,8 +53,8 @@
         <section id="hero">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <h1>Extração <span class="gradient-text">inteligente</span><br>de documentos</h1>
-                    <p>O Smart Read utiliza inteligência artificial avançada para extrair informações de invoice, packing, BL, AWB e documentos financeiros</p>
+                    <h1>Reduza em até <span class="gradient-text-hero">93%</span> o trabalho manual nos seus <span class="gradient-text-hero">documentos</span></h1>
+                    <p>Substitua horas de digitação por segundos de processamento utilizando a mais avançada inteligência artificial: invoices, packings, BLs, documentos financeiros e muito mais</p>
                     <form class="hero-form">
                         <input type="email" placeholder="Seu e-mail">
                         <button type="submit">Teste agora <span class="arrow">→</span></button>
@@ -39,59 +62,7 @@
                 </div>
                 <div class="hero-visual">
                     <div class="fluxograma-container">
-                        <!-- Área reservada para os blocos SVG -->
-                        <div class="blocos-container">
-                            <div id="bloco1" class="bloco">
-                                <svg width="128" height="120" viewBox="0 0 128 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="127.2" height="120" rx="12" fill="#F5F7FA"/>
-                                    <rect x="0.5" y="0.5" width="126.2" height="119" rx="11.5" stroke="#D9D9D9" stroke-opacity="0.8"/>
-                                    <path d="M42.1207 80.0002C40.6437 80.0002 39.3794 79.5264 38.3276 78.5788C37.2759 77.6313 36.75 76.4921 36.75 75.1615V46.1292C36.75 44.7986 37.2759 43.6595 38.3276 42.7119C39.3794 41.7643 40.6437 41.2905 42.1207 41.2905H58.2327L63.6033 46.1292H85.086C86.5629 46.1292 87.8273 46.603 88.879 47.5506C89.9308 48.4982 90.4567 49.6373 90.4567 50.9679V75.1615C90.4567 76.4921 89.9308 77.6313 88.879 78.5788C87.8273 79.5264 86.5629 80.0002 85.086 80.0002H42.1207ZM42.1207 75.1615H85.086V50.9679H61.3879L56.0173 46.1292H42.1207V75.1615Z" fill="#D9D9D9" fill-opacity="0.8"/>
-                                    <path d="M42.1211 41.3032H58.2275L63.5947 46.1382L63.6035 46.1294L63.5918 46.1421H85.0859C86.5599 46.1421 87.8217 46.6146 88.8711 47.5601C89.9202 48.5054 90.4443 49.6415 90.4443 50.9683V75.1616C90.4443 76.4884 89.9203 77.6245 88.8711 78.5698C87.8217 79.5152 86.5599 79.9878 85.0859 79.9878H42.1211C40.6472 79.9878 39.3853 79.5152 38.3359 78.5698C37.2867 77.6245 36.7627 76.4884 36.7627 75.1616V46.1294C36.7627 44.8026 37.2866 43.6666 38.3359 42.7212C39.3853 41.7758 40.6471 41.3032 42.1211 41.3032ZM42.1084 75.1743H85.0986V50.9556H61.3936L56.0254 46.1196L56.0283 46.1167H42.1084V75.1743Z" stroke="#D9D9D9" stroke-opacity="0.8" stroke-width="0.025"/>
-                                </svg>
-                            </div>
-                            <div id="bloco2" class="bloco">
-                                <svg width="127" height="120" viewBox="0 0 127 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="127" height="120" rx="12" fill="#F5F7FA"/>
-                                    <rect x="0.5" y="0.5" width="126" height="119" rx="11.5" stroke="#D9D9D9" stroke-opacity="0.8"/>
-                                    <path d="M49.7269 83C49.1415 83 48.5959 82.8654 48.0903 82.5961C47.5847 82.3268 47.1989 81.9474 46.9328 81.4578L40.7059 71.25H45.3361L48.5294 77.125H55.8739V74.1875H50.4454L47.2521 68.3125H38.9496L34.3992 60.9688C34.2927 60.724 34.1996 60.4792 34.1197 60.2344C34.0399 59.9896 34 59.7448 34 59.5C34 59.3042 34.1331 58.8146 34.3992 58.0313L38.9496 50.6875H47.2521L50.4454 44.8125H55.8739V41.875H48.5294L45.3361 47.75H40.7059L46.9328 37.5422C47.1989 37.0526 47.5847 36.6732 48.0903 36.4039C48.5959 36.1346 49.1415 36 49.7269 36H57.4706C58.3754 36 59.1338 36.2815 59.7458 36.8445C60.3578 37.4076 60.6639 38.1052 60.6639 38.9375V50.6875H55.8739L52.6807 53.625H60.6639V62.4375H53.6387L50.4454 56.5625H43.1008L39.9076 59.5H48.5294L51.7227 65.375H60.6639V80.0625C60.6639 80.8948 60.3578 81.5925 59.7458 82.1555C59.1338 82.7185 58.3754 83 57.4706 83H49.7269ZM68.6471 83C66.8908 83 65.3873 82.4247 64.1366 81.2742C62.8859 80.1237 62.2605 78.7406 62.2605 77.125C62.2605 75.999 62.5532 75.0076 63.1387 74.1508C63.7241 73.294 64.4958 72.5964 65.4538 72.0578V46.9422C64.4958 46.4036 63.7241 45.706 63.1387 44.8492C62.5532 43.9924 62.2605 43.001 62.2605 41.875C62.2605 40.2594 62.8859 38.8763 64.1366 37.7258C65.3873 36.5753 66.8908 36 68.6471 36C70.4034 36 71.9069 36.5753 73.1576 37.7258C74.4083 38.8763 75.0336 40.2594 75.0336 41.875C75.0336 43.001 74.7409 43.9924 74.1555 44.8492C73.57 45.706 72.7983 46.4036 71.8403 46.9422V54.3594L78.2269 50.8344C78.2269 49.1698 78.8522 47.75 80.1029 46.575C81.3536 45.4 82.8571 44.8125 84.6134 44.8125C86.3697 44.8125 87.8733 45.3878 89.124 46.5383C90.3747 47.6888 91 49.0719 91 50.6875C91 52.3031 90.3747 53.6862 89.124 54.8367C87.8733 55.9872 86.3697 56.5625 84.6134 56.5625C84.028 56.5625 83.4825 56.5013 82.9769 56.3789C82.4713 56.2565 81.979 56.0729 81.5 55.8281L74.2353 59.8672L82.2983 65.7422C82.6709 65.5953 83.0434 65.4974 83.416 65.4484C83.7885 65.3995 84.1877 65.375 84.6134 65.375C86.3697 65.375 87.8733 65.9503 89.124 67.1008C90.3747 68.2513 91 69.6344 91 71.25C91 72.8656 90.3747 74.2487 89.124 75.3992C87.8733 76.5497 86.3697 77.125 84.6134 77.125C82.6443 77.125 81.0343 76.4396 79.7836 75.0688C78.5329 73.6979 78.0406 72.1313 78.3067 70.3688L71.8403 65.5953V72.1313C72.7983 72.6698 73.5567 73.3674 74.1155 74.2242C74.6744 75.081 74.9538 76.0479 74.9538 77.125C74.9538 78.7406 74.3417 80.1237 73.1176 81.2742C71.8936 82.4247 70.4034 83 68.6471 83Z" fill="#D9D9D9" fill-opacity="0.8"/>
-                                </svg>
-                            </div>
-                            <div id="bloco3" class="bloco">
-                                <svg width="127" height="120" viewBox="0 0 127 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="127" height="120" rx="12" fill="#F5F7FA"/>
-                                    <rect x="0.5" y="0.5" width="126" height="119" rx="11.5" stroke="#D9D9D9" stroke-opacity="0.8"/>
-                                    <path d="M54.2708 73.1598L50.357 69.2398L62.3781 57.1998H52.3139V51.5998H71.8831V71.1998H66.2919V61.1198L54.2708 73.1598ZM83.0655 59.9998V40.3998H63.4963V34.7998H88.6567V59.9998H83.0655ZM43.9271 85.1998C42.3896 85.1998 41.0733 84.6515 39.9784 83.5548C38.8834 82.4581 38.3359 81.1398 38.3359 79.5998V34.7998H43.9271V79.5998H88.6567V85.1998H43.9271Z" fill="#D9D9D9" fill-opacity="0.8"/>
-                                </svg>
-                            </div>
-                            <div id="bloco4" class="bloco">
-                                <svg width="127" height="120" viewBox="0 0 127 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="127" height="120" rx="12" fill="#F5F7FA"/>
-                                    <rect x="0.5" y="0.5" width="126" height="119" rx="11.5" stroke="#D9D9D9" stroke-opacity="0.8"/>
-                                    <rect x="40" y="35" width="45" height="45" fill="#D9D9D9" fill-opacity="0.8"/>
-                                    <path d="M49.5 61L54.5 53.5L49 46H53L56.5 50.5L60 46H64L58.5 53.5L63.5 61H59.5L56 56L52.5 61H49.5Z" fill="#F5F7FA"/>
-                                </svg>
-                            </div>
-                            <div id="bloco5" class="bloco">
-                                <svg width="127" height="120" viewBox="0 0 127 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="127" height="120" rx="12" fill="#F5F7FA"/>
-                                    <rect x="0.5" y="0.5" width="126" height="119" rx="11.5" stroke="#D9D9D9" stroke-opacity="0.8"/>
-                                    <rect x="40" y="35" width="45" height="45" fill="#D9D9D9" fill-opacity="0.8"/>
-                                    <path d="M50 46H75V48H50V46ZM50 51H75V53H50V51ZM50 56H75V58H50V56Z" fill="#F5F7FA"/>
-                                </svg>
-                            </div>
-                            <div id="bloco6" class="bloco">
-                                <svg width="127" height="120" viewBox="0 0 127 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="127" height="120" rx="12" fill="#F5F7FA"/>
-                                    <rect x="0.5" y="0.5" width="126" height="119" rx="11.5" stroke="#D9D9D9" stroke-opacity="0.8"/>
-                                    <path d="M41.1269 87.5999H38.9445V82.0799H41.1269C43.3093 82.0799 45.3893 81.8384 47.3671 81.3554C49.3449 80.8724 51.5614 80.1019 54.0166 79.0439C55.7443 79.9179 57.2561 80.6424 58.5518 81.2174C59.8476 81.7924 61.4958 82.0799 63.4963 82.0799C65.4968 82.0799 67.145 81.7924 68.4408 81.2174C69.7366 80.6424 71.2483 79.9179 72.976 79.0439C75.3858 80.1019 77.6022 80.8724 79.6255 81.3554C81.6488 81.8384 83.7516 82.0799 85.934 82.0799H88.0481V87.5999H85.934C83.7061 87.5999 81.5351 87.3929 79.4209 86.9789C77.3067 86.5649 75.2266 85.9439 73.1806 85.1159C71.362 85.9899 69.7025 86.6109 68.2021 86.9789C66.7017 87.3469 65.1331 87.5309 63.4963 87.5309C61.8595 87.5309 60.3023 87.3469 58.8246 86.9789C57.347 86.6109 55.6988 85.9899 53.8802 85.1159C51.8342 85.9439 49.7541 86.5649 47.6399 86.9789C45.5257 87.3929 43.3547 87.5999 41.1269 87.5999ZM63.4963 76.5599C60.7683 76.5599 58.3814 75.6399 56.3354 73.7999L53.2664 71.0399C52.0388 72.2819 50.6634 73.3399 49.1403 74.2139C47.6172 75.0879 45.9918 75.7089 44.2641 76.0769L38.4671 57.2399C38.2398 56.4579 38.308 55.7449 38.6717 55.1009C39.0354 54.4569 39.6037 54.0199 40.3767 53.7899L44.4004 52.6859V43.4399C44.4004 41.9219 44.9347 40.6224 46.0031 39.5414C47.0716 38.4604 48.356 37.9199 49.8564 37.9199H56.6764V32.3999H70.3163V37.9199H77.1362C78.6366 37.9199 79.921 38.4604 80.9895 39.5414C82.058 40.6224 82.5922 41.9219 82.5922 43.4399V52.6859L86.616 53.7899C87.3889 54.0199 87.9572 54.4569 88.3209 55.1009C88.6847 55.7449 88.7529 56.4579 88.5255 57.2399L82.7286 76.0769C81.0009 75.7089 79.3754 75.0879 77.8523 74.2139C76.3292 73.3399 74.9538 72.2819 73.7262 71.0399L70.6573 73.7999C68.6113 75.6399 66.2243 76.5599 63.4963 76.5599ZM63.6327 71.0399C65.0422 71.0399 66.2925 70.5684 67.3837 69.6254C68.4749 68.6824 69.4751 67.6819 70.3845 66.6239L73.5216 62.9669L76.3178 65.8649C76.818 66.3709 77.3295 66.8424 77.8523 67.2794C78.3752 67.7164 78.8867 68.1649 79.3868 68.6249L82.524 58.3439L63.4963 53.3069L44.5368 58.3439L47.674 68.6249C48.1742 68.1649 48.6857 67.7164 49.2085 67.2794C49.7314 66.8424 50.2429 66.3709 50.743 65.8649L53.5392 62.9669L56.6764 66.6239C57.5857 67.7279 58.6087 68.7399 59.7453 69.6599C60.882 70.5799 62.1778 71.0399 63.6327 71.0399ZM49.8564 51.2369L63.4963 47.5799L77.1362 51.2369V43.4399H49.8564V51.2369Z" fill="#D9D9D9" fill-opacity="0.8"/>
-                                </svg>
-                            </div>
-                        </div>
-                        
-                        <!-- Área para as linhas de conexão -->
-                        <div class="linhas-container">
-                            <!-- As linhas de conexão serão inseridas aqui -->
-                        </div>
+                        <img src="assets/format-icons/fluxograma.png" alt="Fluxograma ilustrativo" class="fluxograma-img">
                     </div>
                 </div>
             </div>
@@ -99,22 +70,22 @@
 
         <section id="como-funciona">
             <div class="section-title">
-                <h2 class="gradient-text animate active">Como o Smart Read funciona</h2>
+            <h2>Como o Smart Read funciona</h2>
+                <p class="animate active subtitle-gray">Em 4 etapas, seus documentos viram dados prontos com IA.</p>
             </div>
-            <p class="animate active">Um processo simples e eficiente para extrair informações valiosas dos seus documentos</p>
             <div class="steps-container">
                 <div class="step">
                     <div class="step-text">
-                        <h3>1. Anexe seus documentos</h3>
-                        <p>Faça upload dos seus documentos em diversos formatos ou arraste-os diretamente para a plataforma.</p>
+                        <h3>1. Envie seus documentos com um clique</h3>
+                        <p>Faça upload dos seus documentos em diversos formatos ou arraste-os diretamente para a plataforma</p>
                         <div class="icon-text">
                             <div class="icon-container">
                                 <img src="assets/file-icon.svg" alt="Ícone de Formatos Suportados">
                             </div>
                             <div class="text-container">
-                                <span>Formatos suportados</span>
-                                <h4>PDF, Word, Excel, JSON, XML, CSV</h4>
-                            </div>
+                               <span>Múltiplos formatos suportados</span>
+                               <h4>Excel, PDF, JPEG, Word, JSON, XML, CSV</h4>
+                           </div>
                         </div>
                     </div>
                     <div class="step-visual">
@@ -131,17 +102,17 @@
                     </div>
                 </div>
                 <div class="step">
-                    <div class="step-text">
-                        <h3>2. Processamento inteligente</h3>
-                        <p>Nossa IA analisa os documentos, identificando e extraindo informações relevantes com alta precisão.</p>
-                        <div class="icon-text">
+                   <div class="step-text">
+                        <h3>2. Deixe a IA trabalhar por você</h3>
+                        <p>Nossa IA analisa os documentos, identificando e extraindo informações com alta precisão</p>
+                         <div class="icon-text">
                             <div class="icon-container">
                                 <img src="assets/brain-icon.svg" alt="Ícone de Processamento">
                             </div>
                             <div class="text-container">
-                                <span>Tempo médio de processamento</span>
-                                <h4>2 minutos por documento</h4>
-                            </div>
+                               <span>Tempo médio de processamento</span>
+                               <h4>20 segundos por documento</h4>
+                           </div>
                         </div>
                     </div>
                     <div class="step-visual">
@@ -159,16 +130,16 @@
                 </div>
                 <div class="step">
                     <div class="step-text">
-                        <h3>3. Confirme as informações</h3>
-                        <p>Revise e valide as informações extraídas, com a possibilidade de editar quando necessário.</p>
+                        <h3>3. Revise e ajuste apenas se necessário</h3>
+                        <p>Você tem controle total para revisar ou corrigir dados antes de finalizar</p>
                         <div class="icon-text">
                             <div class="icon-container">
                                 <img src="assets/check-icon.svg" alt="Ícone de Taxa de Precisão">
                             </div>
                             <div class="text-container">
-                                <span>Taxa de precisão</span>
-                                <h4>80% de acertos</h4>
-                            </div>
+                               <span>Taxa de precisão</span>
+                               <h4>87% de acertos</h4>
+                           </div>
                         </div>
                     </div>
                     <div class="step-visual">
@@ -178,7 +149,7 @@
                                 Seu navegador não suporta a tag de vídeo.
                             </video>
                         </div>
-                        <div class="video-controls">
+                         <div class="video-controls">
                             <button onclick="document.getElementById('demo-video-3').play()" class="restart-btn">Reiniciar vídeo</button>
                             <button onclick="document.getElementById('demo-video-3').requestFullscreen()" class="fullscreen-btn">Tela Cheia</button>
                         </div>
@@ -186,16 +157,16 @@
                 </div>
                 <div class="step">
                     <div class="step-text">
-                        <h3>4. Obtenha os resultados</h3>
-                        <p>Baixe as informações extraídas no formato desejado e utilize-as em seus sistemas e processos.</p>
+                        <h3>4. Baixe ou integre os dados</h3>
+                        <p>Exporte resultados em Excel, XML, TXT, Json e use-os diretamente nos seus sistemas, ERP's ou processos internos</p>
                         <div class="icon-text">
                             <div class="icon-container">
                                 <img src="assets/download-icon.svg" alt="Ícone de Formatos de Exportação">
                             </div>
                             <div class="text-container">
-                                <span>Formatos de exportação</span>
-                                <h4>CSV, JSON, Excel, PDF</h4>
-                            </div>
+                               <span>Formatos de exportação</span>
+                               <h4>Excel, TXT, XML, JSON, Excel, PDF</h4>
+                           </div>
                         </div>
                     </div>
                     <div class="step-visual">
@@ -217,38 +188,61 @@
         <section id="integracoes">
             <div class="container">
                 <div class="section-title">
-                    <h2 class="gradient-text animate active">Integração nativa com seus sistemas</h2>
+                    <h2>Integre o Smart Read aos seus sistemas atuais</h2>
+                    <p class="section-subtitle">Integração plug and play com: Excel, SAP, Totvs, Dati Import, One Source e mais</p>
                 </div>
-                <p class="animate active">O Smart Read se conecta facilmente com as ferramentas que você já utiliza</p>
-                <div class="integration-grid">
-                    <div class="integration-item">
-                        <img src="assets/integrations/original/excel.png" alt="Excel">
-                        <span>Excel</span>
+                <div class="integration-carousel">
+                    <button class="carousel-button prev" onclick="moveIntegrationCarousel(-1)">❮</button>
+                    <div class="integration-carousel-container">
+                        <div class="integration-grid">
+                            <div class="integration-item">
+                                <img src="assets/integrations/original/excel.png" alt="Excel">
+                
+                            </div>
+                            <div class="integration-item">
+                                <img src="assets/format-icons/icone_sap.png" alt="SAP">
+                                
+                            </div>
+                            <div class="integration-item">
+                                <img src="assets/format-icons/logo_totvs.png" alt="TOTVS">
+                                
+                            </div>
+                            <div class="integration-item">
+                                <img src="assets/format-icons/logo_dati.png" alt="Dati Import">
+                                
+                            </div>
+                            <div class="integration-item">
+                                <img src="assets/integrations/original/siscomex.png" alt="Portal Único">
+                                
+                            </div>
+                            <div class="integration-item">
+                                <img src="assets/format-icons/logo_cargowise.png" alt="Cargowise">
+                                
+                            </div>
+                            <div class="integration-item">
+                                <div class="integration-logo-container">
+                                    <img src="assets/format-icons/logo_oracle.png" alt="Oracle">
+                                </div>
+                               
+                            </div>
+                            <div class="integration-item">
+                                <img src="assets/format-icons/icone_LINX.png" alt="Linx">
+                               
+                            </div>
+                            <div class="integration-item">
+                                <img src="assets/format-icons/icone_sankhya.png" alt="Sankhya">
+                               
+                            </div>
+                            <div class="integration-item">
+                                <img src="assets/format-icons/logo_bysoft.png" alt="Bysoft">
+                                
+                            </div>
+                        </div>
                     </div>
-                    <div class="integration-item">
-                        <img src="assets/integrations/original/sap.png" alt="SAP">
-                        <span>SAP</span>
-                    </div>
-                    <div class="integration-item">
-                        <img src="assets/integrations/original/totvs.png" alt="TOTVS">
-                        <span>TOTVS</span>
-                    </div>
-                    <div class="integration-item">
-                        <img src="assets/integrations/original/oracle.png" alt="Oracle">
-                        <span>Oracle</span>
-                    </div>
-                    <div class="integration-item">
-                        <img src="assets/integrations/original/linx.png" alt="Linx">
-                        <span>Linx</span>
-                    </div>
-                    <div class="integration-item">
-                        <img src="assets/integrations/original/sankhya.png" alt="Sankhya">
-                        <span>Sankhya</span>
-                    </div>
-                    <div class="integration-item">
-                        <img src="assets/integrations/original/siscomex.png" alt="Portal Único">
-                        <span>Portal Único</span>
-                    </div>
+                    <button class="carousel-button next" onclick="moveIntegrationCarousel(1)">❯</button>
+                </div>
+                <div class="carousel-dots integration-dots">
+                    <!-- dots gerados via JS -->
                 </div>
             </div>
         </section>
@@ -256,24 +250,24 @@
         <section id="export-section">
             <div class="container">
                 <div class="section-title">
-                    <h2 class="gradient-text animate active">Exportação para planilhas</h2>
-                    <p class="section-subtitle">Exporte os dados extraídos para o formato que melhor atende sua necessidade</p>
+                    <h2>Leve seus dados para qualquer planilha</h2>
+                    <p class="section-subtitle">Do Smart Read direto para as planilhas que voce já utiliza no seu dia a dia</p>
                 </div>
                 <div class="export-grid">
                     <div class="export-card">
                         <img src="assets/export/excel-icon.png" alt="Microsoft Excel">
                         <h3>Microsoft Excel</h3>
-                        <p>Exporte os dados extraídos diretamente para planilhas Excel, mantendo toda a formatação e estrutura.</p>
+                        <p>Gere planilhas Excel completas a partir dos dados extraídos, com colunas e cálculos prontos</p>
                         <ul>
                             <li>Exportação com um clique</li>
-                            <li>Mapeamento de colunas</li>
+                            <li>Colunas organizadas</li>
                             <li>Fórmulas automáticas</li>
                         </ul>
                     </div>
                     <div class="export-card">
                         <img src="assets/export/sheets-icon.png" alt="Google Sheets">
                         <h3>Google Sheets</h3>
-                        <p>Integre com o Google Sheets para colaboração em tempo real e acesso aos dados de qualquer lugar.</p>
+                        <p>Envie dados direto para o Google Sheets, colaborando em tempo real com sua equipe, de onde estiver</p>
                         <ul>
                             <li>Sincronização automática</li>
                             <li>Compartilhamento fácil</li>
@@ -297,17 +291,17 @@
         <section id="erp-section">
             <div class="container">
                 <div class="section-title">
-                    <h2 class="gradient-text animate active">Integração com ERPs</h2>
-                    <p class="section-subtitle">Conecte o Smart Read com os principais sistemas de gestão empresarial</p>
+                    <h2>Integração com os maiores ERPs do mercado</h2>
+                    <p class="section-subtitle">Transforme dados extraídos em entradas automáticas nos seus ERPs</p>
                 </div>
                 <div class="erp-carousel">
                     <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
                     <div class="erp-carousel-container">
                         <div class="erp-grid">
                             <div class="erp-card">
-                                <img src="assets/erp/sap-icon.png" alt="SAP">
-                                <h3>SAP</h3>
-                                <p>Integre perfeitamente com o SAP para automatizar a entrada de dados e processos de negócios.</p>
+                                <img src="assets/format-icons/icone_sap.png" alt="SAP">
+                                
+                        <p>Integre perfeitamente com o SAP para automatizar a entrada de dados e processos de negócios.</p>
                                 <ul>
                                     <li>Compatível com SAP S/4HANA</li>
                                     <li>Mapeamento de campos personalizável</li>
@@ -315,8 +309,8 @@
                                 </ul>
                             </div>
                             <div class="erp-card">
-                                <img src="assets/erp/totvs-icon.png" alt="TOTVS">
-                                <h3>TOTVS</h3>
+                                <img src="assets/format-icons/logo_totvs.png" alt="TOTVS">
+                               
                                 <p>Conecte-se com o TOTVS para otimizar seus processos de importação e gestão de documentos.</p>
                                 <ul>
                                     <li>Compatível com Protheus</li>
@@ -325,8 +319,8 @@
                                 </ul>
                             </div>
                             <div class="erp-card">
-                                <img src="assets/erp/oracle-icon.png" alt="Oracle">
-                                <h3>Oracle</h3>
+                                <img src="assets/format-icons/logo_oracle.png" alt="Oracle">
+                              
                                 <p>Integre com Oracle ERP Cloud e E-Business Suite para uma gestão de dados eficiente.</p>
                                 <ul>
                                     <li>Sincronização bidirecional</li>
@@ -335,8 +329,8 @@
                                 </ul>
                             </div>
                             <div class="erp-card">
-                                <img src="assets/erp/linx-icon.png" alt="Linx">
-                                <h3>Linx</h3>
+                                <img src="assets/format-icons/icone_LINX.png" alt="Linx">
+                                
                                 <p>Integração completa com o sistema Linx para otimização de processos comerciais.</p>
                                 <ul>
                                     <li>Integração em tempo real</li>
@@ -345,8 +339,8 @@
                                 </ul>
                             </div>
                             <div class="erp-card">
-                                <img src="assets/erp/sankhya-icon.png" alt="Sankhya">
-                                <h3>Sankhya</h3>
+                                <img src="assets/format-icons/icone_sankhya.png" alt="Sankhya">
+                                
                                 <p>Conecte-se ao Sankhya ERP para uma gestão empresarial integrada e eficiente.</p>
                                 <ul>
                                     <li>Gestão financeira</li>
@@ -355,8 +349,8 @@
                                 </ul>
                             </div>
                             <div class="erp-card">
-                                <img src="assets/erp/senior-icon.png" alt="Senior">
-                                <h3>Senior</h3>
+                                <img src="assets/format-icons/icone_senior.png" alt="Senior">
+                               
                                 <p>Integração com Senior Sistemas para gestão completa de processos empresariais.</p>
                                 <ul>
                                     <li>Gestão de documentos</li>
@@ -378,29 +372,29 @@
         <section id="teste-extracao">
             <div class="container">
                 <div class="section-title">
-                    <h2 class="gradient-text animate active">Teste a extração agora mesmo</h2>
+                    <h2>Veja o Smart Read em ação agora mesmo</h2>
+                    <p class="section-subtitle">Faça upload de qualquer documento e veja seus dados extraídos em segundos com inteligência artificial</p>
                 </div>
-                <p>Faça upload de um documento e veja o Smart Read em ação</p>
                 <div class="upload-component-wrapper">
                     <h3>Faça upload do seu documento</h3>
-                    <p>Arraste e solte ou clique para selecionar</p>
+                    <p>Arraste, solte ou clique para enviar seu arquivo</p>
                     <div class="upload-area">
-                        <img src="assets/upload-icon.svg" alt="Upload">
+                        <img src="assets/format-icons/icone_nuvem.png" alt="Upload">
                         <label for="file-upload">Clique para selecionar ou arraste aqui</label>
                         <input type="file" id="file-upload" hidden>
                     </div>
                     <div class="supported-formats">
                         <span>Formatos suportados:</span>
-                        <img src="assets/format-icons/pdf.svg" alt="PDF">
-                        <img src="assets/format-icons/word.svg" alt="Word">
-                        <img src="assets/format-icons/excel.svg" alt="Excel">
-                        <img src="assets/format-icons/xml.svg" alt="XML">
-                        <img src="assets/format-icons/json.svg" alt="JSON">
-                        <img src="assets/format-icons/csv.svg" alt="CSV">
+                        <img src="assets/format-icons/icone_pdf.png" alt="PDF">
+                        <img src="assets/format-icons/icone_word.png" alt="Word">
+                        <img src="assets/format-icons/Excel_png.png" alt="Excel">
+                        <img src="assets/format-icons/icone_codigo.png" alt="JSON">
+                        <img src="assets/format-icons/icone_csv.png" alt="CSV">
+                        <img src="assets/format-icons/icone_xls.png" alt="XML">
                     </div>
                     <form class="hero-form">
                         <input type="email" placeholder="Seu e-mail">
-                        <button type="submit">Teste agora <span class="arrow">→</span></button>
+                        <button type="submit">Comece grátis agora <span class="arrow">→</span></button>
                     </form>
                 </div>
             </div>
@@ -409,51 +403,52 @@
         <section id="recursos">
             <div class="container">
                 <div class="section-title">
-                    <h2 class="gradient-text animate active">Recursos poderosos para sua empresa</h2>
+                    <h2>Todos os ganhos com o Smart Read</h2>
+                    <p class="section-subtitle">Do processamento inteligente à segurança de nível internacional: descubra os recursos que transformam seus documentos em resultados</p>
                 </div>
-                <p>Descubra como o Smart Read pode transformar o processamento de documentos da sua empresa</p>
+                <p>
                 <div class="recursos-grid">
                     <div class="recurso-card">
                         <div class="icon-circle blue">
-                            <img src="assets/icons/fast.svg" alt="Ícone de velocidade">
+                            <img src="assets/format-icons/icone_processamentoultrarapido.png" alt="Ícone de processamento ultrarrápido">
                         </div>
-                        <h3>Processamento rápido</h3>
+                        <h3>Processamento ultrarrápido</h3>
                         <p>Extraia informações de documentos em segundos, não em horas. Nossa tecnologia de IA processa documentos complexos em tempo recorde.</p>
                     </div>
                     <div class="recurso-card">
                         <div class="icon-circle purple">
-                            <img src="assets/icons/ai.svg" alt="Ícone de IA">
+                            <img src="assets/format-icons/icone_ia_avançada.png" alt="Ícone de IA avançada">
                         </div>
                         <h3>IA avançada</h3>
                         <p>Algoritmos de aprendizado de máquina que melhoram continuamente, garantindo precisão cada vez maior na extração de dados.</p>
                     </div>
                     <div class="recurso-card">
                         <div class="icon-circle green">
-                            <img src="assets/icons/formats.svg" alt="Ícone de formatos">
+                            <img src="assets/format-icons/icone_multiformato.png" alt="Ícone de múltiplos formatos">
                         </div>
                         <h3>Múltiplos formatos</h3>
                         <p>Suporte para diversos formatos de documentos: PDF, Word, Excel, JSON, XML, CSV e muito mais.</p>
                     </div>
                     <div class="recurso-card">
                         <div class="icon-circle orange">
-                            <img src="assets/icons/analytics.svg" alt="Ícone de análise">
+                            <img src="assets/format-icons/icone_plugandplay_integration.png" alt="Ícone de integração plug and play">
                         </div>
-                        <h3>Análise de desempenho</h3>
-                        <p>Acompanhe métricas de desempenho e economia de recursos em tempo real com nosso dashboard intuitivo.</p>
+                        <h3>Plug and Play Integration</h3>
+                        <p>Integre facilmente com seus sistemas existentes através de nossa API robusta e bem documentada.</p>
                     </div>
                     <div class="recurso-card">
                         <div class="icon-circle red">
-                            <img src="assets/icons/security.svg" alt="Ícone de segurança">
+                            <img src="assets/format-icons/icone_segurança.png" alt="Ícone de segurança">
                         </div>
                         <h3>Segurança garantida</h3>
                         <p>Seus documentos são processados com total segurança, garantindo a confidencialidade das informações.</p>
                     </div>
                     <div class="recurso-card">
                         <div class="icon-circle teal">
-                            <img src="assets/icons/integration.svg" alt="Ícone de integração">
+                            <img src="assets/format-icons/icone_análise_desempenho.png" alt="Ícone de análise de desempenho">
                         </div>
-                        <h3>Integração simples</h3>
-                        <p>Integre facilmente com seus sistemas existentes através de nossa API robusta e bem documentada.</p>
+                        <h3>Análise de desempenho</h3>
+                        <p>Acompanhe métricas de desempenho e economia de recursos em tempo real com nosso dashboard intuitivo.</p>
                     </div>
                 </div>
             </div>
@@ -462,7 +457,7 @@
         <section id="depoimentos">
             <div class="container">
                 <div class="section-title">
-                    <h2 class="gradient-text animate active">O que nossos clientes dizem</h2>
+                    <h2>O que nossos clientes dizem</h2>
                     <p class="section-subtitle">Empresas de diversos setores já transformaram seus processos com o Smart Read</p>
                 </div>
                 
@@ -471,7 +466,7 @@
                         <div class="testimonial-content">
                             <p class="quote">"O Smart Read reduziu nosso tempo de processamento de documentos em 75%. O que levava dias agora é feito em horas, com muito mais precisão."</p>
                             <div class="author-info">
-                                <img src="assets/testimonials/joao-silva.jpg" alt="João Silva">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="João Silva">
                                 <div class="author-details">
                                     <h4>João Silva</h4>
                                     <p>Diretor de Operações,<br>LogTech Brasil</p>
@@ -484,7 +479,7 @@
                         <div class="testimonial-content">
                             <p class="quote">"A integração com nosso ERP foi surpreendentemente fácil. Agora temos um fluxo contínuo de dados dos documentos para nossos sistemas."</p>
                             <div class="author-info">
-                                <img src="assets/testimonials/maria-santos.jpg" alt="Maria Santos">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Maria Santos">
                                 <div class="author-details">
                                     <h4>Maria Santos</h4>
                                     <p>CTO, Importadora Global</p>
@@ -497,33 +492,60 @@
                         <div class="testimonial-content">
                             <p class="quote">"A precisão do Smart Read na extração de dados de notas fiscais e faturas internacionais nos ajudou a eliminar erros manuais e agilizar nossos processos."</p>
                             <div class="author-info">
-                                <img src="assets/testimonials/carlos-mendes.jpg" alt="Carlos Mendes">
+                                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Carlos Mendes">
                                 <div class="author-details">
                                     <h4>Carlos Mendes</h4>
                                     <p>Gerente Financeiro,<br>TechImport</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Carrossel de clientes integrado ao fundo -->
+        <section id="clientes-carrossel" style="background: transparent; padding: 0; margin: 0;">
+          <div class="container" style="padding: 0;">
+            <div class="clientes-carousel-wrapper" style="overflow: hidden; width: 100%;">
+              <div class="clientes-carousel" style="display: flex; align-items: center; gap: 64px; width: max-content; animation: clientes-scroll 30s linear infinite;">
+                <img src="assets/format-icons/logo_intelbras.png" alt="Intelbras" class="cliente-logo">
+                <img src="assets/format-icons/logo_ottis.png" alt="Ottis" class="cliente-logo">
+                <img src="assets/format-icons/logo_vulcabras.png" alt="Vulcabras" class="cliente-logo">
+                <img src="assets/format-icons/logo_ripcurl.png" alt="Rip Curl" class="cliente-logo">
+                <img src="assets/format-icons/logo_cassol.png" alt="Cassol" class="cliente-logo">
+                <img src="assets/format-icons/icone_goedert.png" alt="Goedert" class="cliente-logo">
+                <img src="assets/format-icons/icone_japi.png" alt="Japi" class="cliente-logo">
+                <img src="assets/format-icons/icone_torra.png" alt="Torra" class="cliente-logo">
+                <!-- Repete para loop -->
+                <img src="assets/format-icons/logo_intelbras.png" alt="Intelbras" class="cliente-logo">
+                <img src="assets/format-icons/logo_ottis.png" alt="Ottis" class="cliente-logo">
+                <img src="assets/format-icons/logo_vulcabras.png" alt="Vulcabras" class="cliente-logo">
+                <img src="assets/format-icons/logo_ripcurl.png" alt="Rip Curl" class="cliente-logo">
+                <img src="assets/format-icons/logo_cassol.png" alt="Cassol" class="cliente-logo">
+                <img src="assets/format-icons/icone_goedert.png" alt="Goedert" class="cliente-logo">
+                <img src="assets/format-icons/icone_japi.png" alt="Japi" class="cliente-logo">
+                <img src="assets/format-icons/icone_torra.png" alt="Torra" class="cliente-logo">
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="precos">
             <div class="container">
                 <div class="section-title">
-                    <h2 class="gradient-text animate active">Planos e Preços</h2>
+            <h2>Planos e Preços</h2>
                     <p class="section-subtitle">Escolha o plano ideal para suas necessidades de extração de dados</p>
                 </div>
                 
                 <div class="pricing-grid">
                     <div class="pricing-card">
                         <div class="pricing-header">
-                            <h3>Básico</h3>
+                            <h3>Essencial</h3>
                             <div class="price">
                                 <span class="currency">R$</span>
-                                <span class="amount">99</span>
-                                <span class="period">/mês</span>
+                                <span class="amount">19,90</span>
+                                <span class="period">/documento</span>
                             </div>
                         </div>
                         <ul class="features">
@@ -531,30 +553,29 @@
                                 <svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                100 documentos/mês
+                                Mínimo mensal: R$ 2.000,00
                             </li>
                             <li>
                                 <svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Extração padrão
+                                Setup: R$ 10.000,00
                             </li>
                             <li>
                                 <svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Suporte por e-mail
-                            </li>
+                                Até 50 documentos/mês                           </li>
                         </ul>
                         <a href="#" class="pricing-button"><span>Começar agora</span></a>
                     </div>
 
                     <div class="pricing-card featured">
                         <div class="pricing-header">
-                            <h3>Profissional</h3>
+                    <h3>Growth</h3>
                             <div class="price">
                                 <span class="currency">R$</span>
-                                <span class="amount">299</span>
+                                <span class="amount">12,90</span>
                                 <span class="period">/mês</span>
                             </div>
                         </div>
@@ -563,35 +584,37 @@
                                 <svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                500 documentos/mês
+                                Mínimo mensal: R$ 5.000,00
                             </li>
                             <li>
                                 <svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Extração avançada
+                                Setup: R$ 10.000,00
                             </li>
                             <li>
                                 <svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Integrações básicas
+                                Até 200 documentos/mês 
                             </li>
                             <li>
                                 <svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Suporte prioritário
+                                Suporte 02 horas/mês
                             </li>
-                        </ul>
+                    </ul>
                         <a href="#" class="pricing-button"><span>Escolher plano</span></a>
-                    </div>
+                </div>
 
                     <div class="pricing-card">
                         <div class="pricing-header">
-                            <h3>Empresarial</h3>
+                            <h3>Enterprise</h3>
                             <div class="price">
-                                <span class="custom-price">Personalizado</span>
+                                <span class="currency">R$</span>
+                                <span class="amount">9,90</span>
+                                <span class="period">/mês</span>
                             </div>
                         </div>
                         <ul class="features">
@@ -599,28 +622,28 @@
                                 <svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Volume ilimitado
+                                Mínimo mensal: R$ 10.000,00
                             </li>
                             <li>
                                 <svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Extração personalizada
+                                Setup: R$ 10.000,00
                             </li>
                             <li>
                                 <svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Todas as integrações
+                                Até 500 documentos/mês
                             </li>
                             <li>
                                 <svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Gerente de conta dedicado
+                                Suporte 02 horas/mês
                             </li>
-                        </ul>
-                        <a href="#" class="pricing-button"><span>Fale conosco</span></a>
+                    </ul>
+                        <a href="#" class="pricing-button"><span>Começar agora</span></a>
                     </div>
                 </div>
             </div>
@@ -629,17 +652,17 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content">
+        <div class="footer-content">
                 <div class="footer-section">
                     <h3>Sobre nós</h3>
                     <p>Somos especialistas em tecnologia e inovação, comprometidos em fornecer soluções eficientes e seguras para o processamento de documentos.</p>
-                </div>
+            </div>
                 <div class="footer-section">
                     <h3>Links rápidos</h3>
                     <ul>
                         <li><a href="#como-funciona">Como funciona</a></li>
                         <li><a href="#integracoes">Integrações</a></li>
-                        <li><a href="#solucoes">Soluções</a></li>
+                        <li><a href="#solucoes">Mais recursos</a></li>
                         <li><a href="#precos">Preços</a></li>
                     </ul>
                 </div>
@@ -651,64 +674,73 @@
                         <a href="#" target="_blank"><img src="assets/social-icons/facebook.png" alt="Facebook"></a>
                         <a href="#" target="_blank"><img src="assets/social-icons/twitter.png" alt="Twitter"></a>
                         <a href="#" target="_blank"><img src="assets/social-icons/linkedin.png" alt="LinkedIn"></a>
-                    </div>
+                </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2023 Smart Read. Todos os direitos reservados.</p>
-            </div>
+        </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
     <script>
-        function ativarBloco(id) {
-            document.getElementById(id).classList.add('active');
-        }
+    // Carrossel de integrações (logos)
+    let integrationCurrentSlide = 0;
+    const integrationGrid = document.querySelector('.integration-grid');
+    const integrationItems = integrationGrid ? Array.from(integrationGrid.children) : [];
+    const integrationDotsContainer = document.querySelector('.integration-dots');
+    const integrationItemsPerSlide = 5; // ajuste conforme o layout
+    const integrationTotalSlides = integrationItems.length > 0 ? Math.ceil(integrationItems.length / integrationItemsPerSlide) : 1;
 
-        function desativarBloco(id) {
-            document.getElementById(id).classList.remove('active');
-        }
+    function renderIntegrationDots() {
+      if (!integrationDotsContainer) return;
+      integrationDotsContainer.innerHTML = '';
+      for (let i = 0; i < integrationTotalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'dot' + (i === integrationCurrentSlide ? ' active' : '');
+        dot.onclick = () => goToIntegrationSlide(i);
+        integrationDotsContainer.appendChild(dot);
+      }
+    }
 
-        function desenharLinha(id, x, y, w) {
-            const linha = document.getElementById(id);
-            linha.style.left = x + 'px';
-            linha.style.top = y + 'px';
-            linha.style.width = w + 'px';
-            linha.style.backgroundColor = '#4CAF50';
-        }
+    function moveIntegrationCarousel(direction) {
+      integrationCurrentSlide += direction;
+      if (integrationCurrentSlide < 0) integrationCurrentSlide = 0;
+      if (integrationCurrentSlide > integrationTotalSlides - 1) integrationCurrentSlide = integrationTotalSlides - 1;
+      updateIntegrationCarousel();
+    }
 
-        setTimeout(() => {
-            ativarBloco('bloco1');
-            setTimeout(() => {
-                desativarBloco('bloco1');
-                desenharLinha('linha1', 200, 90, 80);
-                ativarBloco('bloco2');
-            }, 3000);
-        }, 500);
+    function goToIntegrationSlide(slide) {
+      integrationCurrentSlide = slide;
+      updateIntegrationCarousel();
+    }
 
-        setTimeout(() => {
-            setTimeout(() => {
-                desativarBloco('bloco2');
-                desenharLinha('linha2', 300, 240, 80);
-                ativarBloco('bloco3');
-            }, 3000);
-        }, 4000);
+    function updateIntegrationCarousel() {
+      if (!integrationGrid) return;
+      const slideWidth = integrationGrid.offsetWidth / integrationItemsPerSlide;
+      integrationGrid.style.transform = `translateX(-${integrationCurrentSlide * slideWidth * integrationItemsPerSlide}px)`;
+      renderIntegrationDots();
+    }
 
-        setTimeout(() => {
-            desenharLinha('linha3', 400, 90, 100);
-            ativarBloco('bloco4');
-        }, 7500);
+    // Inicialização
+    if (integrationGrid && integrationItems.length > 0) {
+      integrationGrid.style.transition = 'transform 0.5s';
+      renderIntegrationDots();
+    }
 
-        setTimeout(() => {
-            desenharLinha('linha4', 600, 240, 80);
-            ativarBloco('bloco5');
-        }, 10500);
-
-        setTimeout(() => {
-            desenharLinha('linha5', 700, 390, 80);
-            ativarBloco('bloco6');
-        }, 13500);
+    // Carrossel automático de clientes
+    const clientesCarousel = document.querySelector('.clientes-carousel');
+    let scrollAmount = 0;
+    function autoScrollClientes() {
+      if (!clientesCarousel) return;
+      scrollAmount += 1;
+      if (scrollAmount > clientesCarousel.scrollWidth - clientesCarousel.clientWidth) {
+        scrollAmount = 0;
+      }
+      clientesCarousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }
+    setInterval(autoScrollClientes, 20);
     </script>
 </body>
 </html>

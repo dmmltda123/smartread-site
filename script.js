@@ -257,3 +257,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// === Carrossel de Recursos (Todos os ganhos com o Smart Read) ===
+let recursosCurrentSlide = 0;
+const recursosGrid = document.querySelector('#recursos .erp-grid');
+const recursosCards = recursosGrid ? Array.from(recursosGrid.children) : [];
+const recursosDotsContainer = document.querySelector('.recursos-dots');
+const recursosCardsPerSlide = 3; // 3 cards por slide no desktop
+const recursosTotalSlides = recursosCards.length > 0 ? Math.ceil(recursosCards.length / recursosCardsPerSlide) : 1;
+
+function renderRecursosDots() {
+  if (!recursosDotsContainer) return;
+  recursosDotsContainer.innerHTML = '';
+  for (let i = 0; i < recursosTotalSlides; i++) {
+    const dot = document.createElement('span');
+    dot.className = 'dot' + (i === recursosCurrentSlide ? ' active' : '');
+    dot.onclick = () => goToRecursosSlide(i);
+    recursosDotsContainer.appendChild(dot);
+  }
+}
+
+function moveRecursosCarousel(direction) {
+  recursosCurrentSlide += direction;
+  if (recursosCurrentSlide < 0) recursosCurrentSlide = 0;
+  if (recursosCurrentSlide > recursosTotalSlides - 1) recursosCurrentSlide = recursosTotalSlides - 1;
+  updateRecursosCarousel();
+}
+
+function goToRecursosSlide(slide) {
+  recursosCurrentSlide = slide;
+  updateRecursosCarousel();
+}
+
+function updateRecursosCarousel() {
+  if (!recursosGrid) return;
+  const cardWidth = recursosGrid.offsetWidth / recursosCardsPerSlide;
+  recursosGrid.style.transform = `translateX(-${recursosCurrentSlide * cardWidth * recursosCardsPerSlide}px)`;
+  renderRecursosDots();
+}
+
+// Inicialização do carrossel de recursos
+if (recursosGrid && recursosCards.length > 0) {
+  recursosGrid.style.transition = 'transform 0.5s';
+  renderRecursosDots();
+}

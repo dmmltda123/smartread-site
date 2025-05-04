@@ -6,45 +6,24 @@
     <title>Smart Read - Extração inteligente de documentos</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/favicon.ico">
-    <style>
-        .section-title h2 + * {
-            margin-top: 0 !important;
-        }
-
-        .fluxograma-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .fluxograma-img {
-            height: 100%;
-            width: auto;
-            max-height: 500px; /* ajuste conforme necessário */
-            object-fit: contain;
-            display: block;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="#" class="logo-link">
-                    <img src="assets/logo-smartread.png" alt="Smart Read Logo" class="logo-img">
+    <header class="header-main">
+        <div class="header-bg"></div>
+        <nav class="header-nav">
+            <div class="header-logo-area">
+                <a href="#" class="header-logo-link">
+                    <img src="assets/logo-smartread.png" alt="Smart Read Logo" class="header-logo-img">
                 </a>
             </div>
-            <ul>
+            <ul class="header-menu">
                 <li><a href="#como-funciona">Como funciona</a></li>
                 <li><a href="#integracoes">Integrações</a></li>
-                <li><a href="#solucoes">Mais recursos</a></li>
+                <li><a href="#seguranca">Segurança</a></li>
                 <li><a href="#precos">Preços</a></li>
             </ul>
-            <div class="auth-buttons">
-                <a href="#" class="login-btn">Entrar <span class="arrow">→</span></a>
-                <a href="#" class="cta-btn">Fale com nossa equipe <span class="arrow">→</span></a>
+            <div class="header-cta-area">
+                <a href="#" class="header-cta-btn">Fale com nossa equipe <span class="arrow">→</span></a>
             </div>
         </nav>
     </header>
@@ -53,7 +32,7 @@
         <section id="hero">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <h1>Reduza em até <span class="gradient-text-hero">93%</span> o trabalho manual nos seus <span class="gradient-text-hero">documentos</span></h1>
+                    <h1>Elimine  <span class="gradient-text-hero">87%</span> da digitação do <span class="gradient-text-hero"> Comércio Exterior</span></h1>
                     <p>Substitua horas de digitação por segundos de processamento utilizando a mais avançada inteligência artificial: invoices, packings, BLs, documentos financeiros e muito mais</p>
                     <form class="hero-form">
                         <input type="email" placeholder="Seu e-mail">
@@ -62,7 +41,7 @@
                 </div>
                 <div class="hero-visual">
                     <div class="fluxograma-container">
-                        <img src="assets/format-icons/fluxograma.png" alt="Fluxograma ilustrativo" class="fluxograma-img">
+                        <img src="assets/format-icons/Captura de Tela 2025-05-03 às 23.59.05.png" alt="Fluxograma ilustrativo" class="fluxograma-img">
                     </div>
                 </div>
             </div>
@@ -71,7 +50,7 @@
         <section id="como-funciona">
             <div class="section-title">
             <h2>Como o Smart Read funciona</h2>
-                <p class="animate active subtitle-gray">Em 4 etapas, seus documentos viram dados prontos com IA.</p>
+                <p class="animate active subtitle-gray">Em 4 etapas, seus documentos viram dados prontos com IA</p>
             </div>
             <div class="steps-container">
                 <div class="step">
@@ -288,83 +267,37 @@
             </div>
         </section>
 
-        <section id="erp-section">
+        <section id="seguranca">
             <div class="container">
                 <div class="section-title">
-                    <h2>Integração com os maiores ERPs do mercado</h2>
-                    <p class="section-subtitle">Transforme dados extraídos em entradas automáticas nos seus ERPs</p>
+                    <h2>Proteção total dos dados</h2>
+                    <p class="section-subtitle">Certificações globais, servidores robustos e criptografia para garantir a proteção das suas informações sensíveis</p>
                 </div>
                 <div class="erp-carousel">
-                    <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
                     <div class="erp-carousel-container">
                         <div class="erp-grid">
                             <div class="erp-card">
-                                <img src="assets/format-icons/icone_sap.png" alt="SAP">
-                                
-                        <p>Integre perfeitamente com o SAP para automatizar a entrada de dados e processos de negócios.</p>
-                                <ul>
-                                    <li>Compatível com SAP S/4HANA</li>
-                                    <li>Mapeamento de campos personalizável</li>
-                                    <li>Validação de dados</li>
-                                </ul>
+                                <div class="icon-circle blue">
+                                    <img src="assets/format-icons/icone_criptografia.svg" alt="Criptografia avançada">
+                                </div>
+                                <h3>Criptografia avançada</h3>
+                                <p>Todos os dados enviados e processados são criptografados ponta a ponta, garantindo que apenas você tenha acesso às informações do seu negócio. Nenhum preço, contrato ou documento fica exposto</p>
                             </div>
                             <div class="erp-card">
-                                <img src="assets/format-icons/logo_totvs.png" alt="TOTVS">
-                               
-                                <p>Conecte-se com o TOTVS para otimizar seus processos de importação e gestão de documentos.</p>
-                                <ul>
-                                    <li>Compatível com Protheus</li>
-                                    <li>Automação de processos</li>
-                                    <li>Rastreabilidade completa</li>
-                                </ul>
+                                <div class="icon-circle blue">
+                                    <img src="assets/format-icons/icone_servidor.svg" alt="Infraestrutura AWS robusta">
+                                </div>
+                                <h3>Infraestrutura AWS robusta</h3>
+                                <p>Hospedagem na nuvem AWS com arquitetura escalável, backups automáticos e redundância geográfica. Seu negócio operando com a mesma tecnologia das maiores empresas do mundo</p>
                             </div>
                             <div class="erp-card">
-                                <img src="assets/format-icons/logo_oracle.png" alt="Oracle">
-                              
-                                <p>Integre com Oracle ERP Cloud e E-Business Suite para uma gestão de dados eficiente.</p>
-                                <ul>
-                                    <li>Sincronização bidirecional</li>
-                                    <li>Suporte a Oracle Fusion</li>
-                                    <li>Fluxos de trabalho personalizados</li>
-                                </ul>
+                                <div class="icon-circle blue">
+                                    <img src="assets/format-icons/icone_certificado.svg" alt="Certificações e conformidade global">
+                                </div>
+                                <h3>Certificações e conformidade </h3>
+                                <p>Seguimos as principais normas internacionais: ISO 27001, ISO 27017, ISO 27018, PCI-DSS, SOC 1/2/3, LGPD e GDPR. Segurança, privacidade e governança são prioridades absolutas</p>
                             </div>
-                            <div class="erp-card">
-                                <img src="assets/format-icons/icone_LINX.png" alt="Linx">
-                                
-                                <p>Integração completa com o sistema Linx para otimização de processos comerciais.</p>
-                                <ul>
-                                    <li>Integração em tempo real</li>
-                                    <li>Gestão de estoque</li>
-                                    <li>Controle financeiro</li>
-                                </ul>
-                            </div>
-                            <div class="erp-card">
-                                <img src="assets/format-icons/icone_sankhya.png" alt="Sankhya">
-                                
-                                <p>Conecte-se ao Sankhya ERP para uma gestão empresarial integrada e eficiente.</p>
-                                <ul>
-                                    <li>Gestão financeira</li>
-                                    <li>Controle de documentos</li>
-                                    <li>Automação de processos</li>
-                                </ul>
-                            </div>
-                            <div class="erp-card">
-                                <img src="assets/format-icons/icone_senior.png" alt="Senior">
-                               
-                                <p>Integração com Senior Sistemas para gestão completa de processos empresariais.</p>
-                                <ul>
-                                    <li>Gestão de documentos</li>
-                                    <li>Workflow automatizado</li>
-                                    <li>Controle de acessos</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
-                </div>
-                <div class="carousel-dots">
-                    <span class="dot active" onclick="goToSlide(0)"></span>
-                    <span class="dot" onclick="goToSlide(1)"></span>
+                            
                 </div>
             </div>
         </section>
@@ -400,59 +333,11 @@
             </div>
         </section>
 
+        <!--
         <section id="recursos">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Todos os ganhos com o Smart Read</h2>
-                    <p class="section-subtitle">Do processamento inteligente à segurança de nível internacional: descubra os recursos que transformam seus documentos em resultados</p>
-                </div>
-                <p>
-                <div class="recursos-grid">
-                    <div class="recurso-card">
-                        <div class="icon-circle blue">
-                            <img src="assets/format-icons/icone_processamentoultrarapido.png" alt="Ícone de processamento ultrarrápido">
-                        </div>
-                        <h3>Processamento ultrarrápido</h3>
-                        <p>Extraia informações de documentos em segundos, não em horas. Nossa tecnologia de IA processa documentos complexos em tempo recorde.</p>
-                    </div>
-                    <div class="recurso-card">
-                        <div class="icon-circle purple">
-                            <img src="assets/format-icons/icone_ia_avançada.png" alt="Ícone de IA avançada">
-                        </div>
-                        <h3>IA avançada</h3>
-                        <p>Algoritmos de aprendizado de máquina que melhoram continuamente, garantindo precisão cada vez maior na extração de dados.</p>
-                    </div>
-                    <div class="recurso-card">
-                        <div class="icon-circle green">
-                            <img src="assets/format-icons/icone_multiformato.png" alt="Ícone de múltiplos formatos">
-                        </div>
-                        <h3>Múltiplos formatos</h3>
-                        <p>Suporte para diversos formatos de documentos: PDF, Word, Excel, JSON, XML, CSV e muito mais.</p>
-                    </div>
-                    <div class="recurso-card">
-                        <div class="icon-circle orange">
-                            <img src="assets/format-icons/icone_plugandplay_integration.png" alt="Ícone de integração plug and play">
-                        </div>
-                        <h3>Plug and Play Integration</h3>
-                        <p>Integre facilmente com seus sistemas existentes através de nossa API robusta e bem documentada.</p>
-                    </div>
-                    <div class="recurso-card">
-                        <div class="icon-circle red">
-                            <img src="assets/format-icons/icone_segurança.png" alt="Ícone de segurança">
-                        </div>
-                        <h3>Segurança garantida</h3>
-                        <p>Seus documentos são processados com total segurança, garantindo a confidencialidade das informações.</p>
-                    </div>
-                    <div class="recurso-card">
-                        <div class="icon-circle teal">
-                            <img src="assets/format-icons/icone_análise_desempenho.png" alt="Ícone de análise de desempenho">
-                        </div>
-                        <h3>Análise de desempenho</h3>
-                        <p>Acompanhe métricas de desempenho e economia de recursos em tempo real com nosso dashboard intuitivo.</p>
-                    </div>
-                </div>
-            </div>
+          ...
         </section>
+        -->
 
         <section id="depoimentos">
             <div class="container">
@@ -527,8 +412,8 @@
                 <img src="assets/format-icons/icone_japi.png" alt="Japi" class="cliente-logo">
                 <img src="assets/format-icons/icone_torra.png" alt="Torra" class="cliente-logo">
               </div>
+                </div>
             </div>
-          </div>
         </section>
 
         <section id="precos">
@@ -570,13 +455,13 @@
                         <a href="#" class="pricing-button"><span>Começar agora</span></a>
                     </div>
 
-                    <div class="pricing-card featured">
+                    <div class="pricing-card">
                         <div class="pricing-header">
-                    <h3>Growth</h3>
+                            <h3>Growth</h3>
                             <div class="price">
                                 <span class="currency">R$</span>
                                 <span class="amount">12,90</span>
-                                <span class="period">/mês</span>
+                                <span class="period">/documento</span>
                             </div>
                         </div>
                         <ul class="features">
@@ -604,9 +489,9 @@
                                 </svg>
                                 Suporte 02 horas/mês
                             </li>
-                    </ul>
-                        <a href="#" class="pricing-button"><span>Escolher plano</span></a>
-                </div>
+                        </ul>
+                        <a href="#" class="pricing-button"><span>Começar agora</span></a>
+                    </div>
 
                     <div class="pricing-card">
                         <div class="pricing-header">
@@ -614,7 +499,7 @@
                             <div class="price">
                                 <span class="currency">R$</span>
                                 <span class="amount">9,90</span>
-                                <span class="period">/mês</span>
+                                <span class="period">/documento</span>
                             </div>
                         </div>
                         <ul class="features">
@@ -640,9 +525,9 @@
                                 <svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Suporte 02 horas/mês
+                                Suporte 06 horas/mês
                             </li>
-                    </ul>
+                        </ul>
                         <a href="#" class="pricing-button"><span>Começar agora</span></a>
                     </div>
                 </div>
@@ -650,37 +535,39 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-        <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Sobre nós</h3>
-                    <p>Somos especialistas em tecnologia e inovação, comprometidos em fornecer soluções eficientes e seguras para o processamento de documentos.</p>
-            </div>
-                <div class="footer-section">
-                    <h3>Links rápidos</h3>
-                    <ul>
-                        <li><a href="#como-funciona">Como funciona</a></li>
-                        <li><a href="#integracoes">Integrações</a></li>
-                        <li><a href="#solucoes">Mais recursos</a></li>
-                        <li><a href="#precos">Preços</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contato</h3>
-                    <p>Email: contato@smartread.com</p>
-                    <p>Telefone: (11) 1234-5678</p>
-                    <div class="social-icons">
-                        <a href="#" target="_blank"><img src="assets/social-icons/facebook.png" alt="Facebook"></a>
-                        <a href="#" target="_blank"><img src="assets/social-icons/twitter.png" alt="Twitter"></a>
-                        <a href="#" target="_blank"><img src="assets/social-icons/linkedin.png" alt="LinkedIn"></a>
-                </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Smart Read. Todos os direitos reservados.</p>
+    <footer class="footer-smartread">
+      <div class="footer-separator"></div>
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>Sobre nós</h4>
+          <p>Somos a DATI, especialistas em inteligência artificial para o comércio exterior, oferecendo soluções que automatizam processos, eliminam erros manuais e aceleram resultados</p>
+          <div class="footer-cta-wrapper">
+            <a href="https://datiplataforma.com.br" class="footer-cta" target="_blank">Visite nosso site institucional &rarr;</a>
+          </div>
         </div>
+        <div class="footer-col">
+          <h4>Links rápidos</h4>
+          <ul>
+            <li><a href="#como-funciona">Como funciona</a></li>
+            <li><a href="#integracoes">Integrações</a></li>
+            <li><a href="#seguranca">Segurança</a></li>
+            <li><a href="#precos">Preços</a></li>
+          </ul>
         </div>
+        <div class="footer-col footer-contact">
+          <h4>Contato</h4>
+          <p>Email: <a href="mailto:contato@smartread.com">contato@smartread.com</a></p>
+          <p>Telefone: (11) 1234-5678</p>
+          <div class="footer-social">
+            <a class="footer-social-icon" href="#" target="_blank" aria-label="Facebook"><img src="assets/social-icons/facebook.png" alt="Facebook"></a>
+            <a class="footer-social-icon" href="#" target="_blank" aria-label="Twitter"><img src="assets/social-icons/twitter.png" alt="Twitter"></a>
+            <a class="footer-social-icon" href="#" target="_blank" aria-label="LinkedIn"><img src="assets/social-icons/linkedin.png" alt="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Smart Read. Todos os direitos reservados.</p>
+      </div>
     </footer>
 
     <script src="script.js"></script>

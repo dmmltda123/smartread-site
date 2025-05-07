@@ -1,0 +1,210 @@
+{
+    "home": {
+        "menu": {
+            "howItWorks": "How it works",
+            "integrations": "Integrations",
+            "security": "Security",
+            "pricing": "Pricing",
+            "contactButton": "Contact our team"
+        },
+        "hero": {
+            "mainTitle": "Eliminate 87% of manual data entry in Foreign Trade",
+            "subtitle": "Replace hours of data entry with seconds of processing using advanced artificial intelligence",
+            "description": "Commercial invoices, packing lists, bills of lading, financial documents, and much more.",
+            "buttons": {
+                "insert": "Insert / Upload",
+                "upload": "Upload",
+                "ai": "AI",
+                "excel": "Excel",
+                "erp": "ERP",
+                "systems": "Systems",
+                "email": "Your email",
+                "tryNow": "Try it now"
+            }
+        },
+        "howItWorks": {
+            "title": "How Smart Read works",
+            "subtitle": "In 4 steps, your documents turn into ready-to-use data with AI",
+            "steps": {
+                "step1": {
+                    "title": "Send your documents with one click",
+                    "description": "Upload your documents in various formats or drag them directly into the platform",
+                    "labelSupportedFormats": "Supported formats",
+                    "formats": "Excel, PDF, JPEG, Word, JSON, XML, CSV"
+                },
+                "step2": {
+                    "title": "AI work for you",
+                    "description": "Our AI analyzes the documents, identifying and extracting information with high precision",
+                    "processingTime": "Average processing time: 20 seconds per document"
+                },
+                "step3": {
+                    "title": "Review and adjust only if necessary",
+                    "description": "You have full control to review or correct data before finalizing",
+                    "accuracy": "Accuracy rate: 87%"
+                },
+                "step4": {
+                    "title": "Download or integrate the data",
+                    "description": "Export results in Excel, XML, TXT, JSON, and use them directly in your systems, ERPs, or internal processes",
+                    "exportFormats": "Export formats"
+                }
+            },
+            "buttons": {
+                "restartVideo": "Restart video",
+                "fullScreen": "Full screen"
+            }
+        },
+        "integration": {
+            "title": "Integrate Smart Read with your current systems",
+            "description": "Plug-and-play integration with: Excel, SAP, Totvs, Dati Import, One Source, and more",
+            "systems": "Excel, SAP, Totvs, Dati Import, One Source"
+        },
+        "spreadsheets": {
+            "title": "Bring your data to any spreadsheet",
+            "description": "From Smart Read straight to the spreadsheets you already use every day",
+            "excel": {
+                "title": "Microsoft Excel",
+                "description": "Generate complete Excel spreadsheets from the extracted data, with ready-made columns and calculations",
+                "features": [
+                    "One-click export",
+                    "Organized columns",
+                    "Automatic formulas"
+                ]
+            },
+            "googleSheets": {
+                "title": "Google Sheets",
+                "description": "Send data directly to Google Sheets, collaborating in real-time with your team from anywhere",
+                "features": [
+                    "Automatic synchronization",
+                    "Easy sharing",
+                    "Real-time updates"
+                ]
+            },
+            "csvXlsx": {
+                "title": "CSV/XLSX",
+                "description": "Export to universal formats compatible with any spreadsheet software or database",
+                "features": [
+                    "Universal compatibility",
+                    "Customizable delimiters",
+                    "Configurable encoding"
+                ]
+            }
+        },
+        "security": {
+            "title": "Total data protection",
+            "description": "Global certifications, robust servers, and encryption to ensure the protection of your sensitive information",
+            "encryption": {
+                "title": "Advanced encryption",
+                "description": "All data sent and processed is end-to-end encrypted, ensuring only you have access to your business information. No price, contract, or document is exposed"
+            },
+            "infrastructure": {
+                "title": "Robust AWS infrastructure",
+                "description": "Hosted on AWS cloud with scalable architecture, automatic backups, and geographic redundancy. Your business operates with the same technology as the world's leading companies"
+            },
+            "certifications": {
+                "title": "Certifications and compliance",
+                "description": "We follow major international standards",
+                "standards": "ISO 27001, ISO 27017, ISO 27018, PCI-DSS, SOC 1/2/3, LGPD, and GDPR"
+            }
+        },
+        "cta": {
+            "title": "Smart Read in action now",
+            "description": "Upload any document and see your data extracted in seconds with artificial intelligence",
+            "uploadText": "Upload your document",
+            "dragDropText": "Drag, drop, or click to upload your file",
+            "clickText": "Click to select or drag here",
+            "Formats": "Formats",
+            "E-mail": "Click to select or drag here",
+            "emailPlaceholder": "Your e-mail",
+            "button": "Start now"
+        },
+        "testimonials": {
+            "title": "What our clients say",
+            "subtitle": "Companies from various sectors have already transformed their processes with Smart Read",
+            "items": [
+                {
+                    "name": "João Silva",
+                    "role": "Operations Director",
+                    "company": "LogTech Brazil",
+                    "text": "Smart Read reduced our document processing time by 75%. What used to take days now takes hours, with much more precision."
+                },
+                {
+                    "name": "Maria Santos",
+                    "role": "CTO",
+                    "company": "Global Importer",
+                    "text": "Integration with our ERP was surprisingly easy. We now have a continuous flow of data from the documents to our systems."
+                },
+                {
+                    "name": "Carlos Mendes",
+                    "role": "Finance Manager",
+                    "company": "TechImport",
+                    "text": "Smart Read's accuracy in extracting data from fiscal and international invoices helped us eliminate manual errors and speed up our processes."
+                }
+            ]
+        },
+        "pricing": {
+            "title": "Plans and Pricing",
+            "subtitle": "Choose the ideal plan for your data extraction needs",
+            "plans": [
+                {
+                    "name": "Essential",
+    "currency": "$",
+    "price": "3.99",
+    "unit": "per document",
+    "button": "Start now",
+    "details": [
+      "Minimum monthly: $400.00",
+      "Setup: $500.00",
+      "Up to 50 documents/month"
+                    ]
+                },
+                {
+                    "name": "Growth",
+    "currency": "$",
+    "price": "2.99",
+    "unit": "per document",
+    "button": "Start now",
+    "details": [
+      "Minimum monthly: $1.000.00",
+      "Setup: $500.00",
+      "Up to 200 documents/month",
+      "Support 2 hours/month"
+                    ]
+                },
+                {
+                    "name": "Enterprise",
+    "currency": "$",
+    "price": "1.99",
+    "unit": "per document",
+    "button": "Start now",
+    "details": [
+      "Minimum monthly: $2.000.00",
+      "Setup: $500.00",
+      "Up to 500 documents/month",
+      "Support 6 hours/month"
+                    ]
+                }
+            ]
+        },
+        "footer": {
+            "aboutUs": {
+                "title": "About us",
+                "description": "We are DATI, specialists in artificial intelligence for foreign trade, offering solutions that automate processes, eliminate manual errors, and accelerate results.",
+                "institutionalButton": "Visit our institutional site"
+            },
+            "quickLinks": {
+                "title": "Quick links",
+                "links": [
+                    "How it works",
+                    "Integrations",
+                    "Security",
+                    "Pricing"
+                ]
+            },
+            "contact": {
+                "title": "Contact",
+                "email": "Email: [contact@smartread.com](mailto:contact@smartread.com)",
+                "phone": "Phone: (11) 1234-5678"
+            }
+        }
+    }
+}

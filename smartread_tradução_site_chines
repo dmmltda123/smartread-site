@@ -1,0 +1,119 @@
+{
+"home": {
+"hero": {
+"mainTitle": "消除外贸中87%的手动录入",
+"subtitle": "用最先进的人工智能将数小时的录入工作缩短为几秒钟",
+"description": "商业发票、装箱单、提单、财务文件等等。",
+"buttons": {
+"insert": "插入 / 上传",
+"upload": "上传",
+"ai": "人工智能",
+"excel": "Excel",
+"erp": "ERP",
+"systems": "系统",
+"email": "您的电子邮件",
+"tryNow": "立即试用"
+}
+},
+"howItWorks": {
+"title": "Smart Read 如何运作",
+"subtitle": "四个步骤，让您的文件通过人工智能变为可用数据",
+"steps": {
+"step1": {
+"title": "一键发送您的文件",
+"description": "上传各种格式的文件或直接拖拽到平台",
+"formats": "Excel, PDF, JPEG, Word, JSON, XML, CSV"
+},
+"step2": {
+"title": "让人工智能为您工作",
+"description": "我们的人工智能分析文件，高精度地识别和提取信息",
+"processingTime": "平均处理时间：每个文件20秒"
+},
+"step3": {
+"title": "仅在必要时审核和调整",
+"description": "您可以完全掌控，在最终确认前检查或修正数据",
+"accuracy": "准确率：87%"
+},
+"step4": {
+"title": "下载或集成数据",
+"description": "将结果导出为 Excel、XML、TXT、JSON 格式，直接用于您的系统、ERP 或内部流程",
+"exportFormats": "Excel, TXT, XML, JSON, Excel, PDF"
+}
+}
+},
+"integration": {
+"title": "将 Smart Read 集成到您的现有系统",
+"description": "即插即用集成：Excel、SAP、Totvs、Dati Import、One Source 等",
+"systems": "Excel, SAP, Totvs, Dati Import, One Source"
+},
+"spreadsheets": {
+"title": "将数据导入任意电子表格",
+"description": "从 Smart Read 直接导入您日常使用的电子表格",
+"excel": {
+"title": "Excel",
+"description": "基于提取的数据生成完整的 Excel 表格，带有预设列和计算",
+"features": ["一键导出", "有序列", "自动公式"]
+},
+"googleSheets": {
+"title": "Google Sheets",
+"description": "直接发送数据到 Google Sheets，与您的团队实时协作",
+"features": ["自动同步", "轻松共享", "实时更新"]
+},
+"csvXlsx": {
+"title": "CSV/XLSX",
+"description": "导出为通用格式，与任何电子表格软件或数据库兼容",
+"features": ["通用兼容性", "可定制分隔符", "可配置编码"]
+}
+},
+"security": {
+"title": "全面数据保护",
+"description": "全球认证、强大服务器和加密保障您的敏感信息安全",
+"encryption": {
+"title": "高级加密",
+"description": "所有传输和处理的数据均为端到端加密，仅您可访问您的业务信息。价格、合同或文件均不会泄露"
+},
+"infrastructure": {
+"title": "强大的 AWS 基础设施",
+"description": "托管于 AWS 云，具备可扩展架构、自动备份和地理冗余。您的业务使用世界顶级企业的同等技术"
+},
+"certifications": {
+"title": "认证与合规",
+"description": "我们遵循主要国际标准",
+"standards": "ISO 27001、ISO 27017、ISO 27018、PCI-DSS、SOC 1/2/3、LGPD 和 GDPR"
+}
+},
+"cta": {
+"title": "立即观看 Smart Read 实际效果",
+"description": "上传任意文件，几秒钟内用人工智能提取数据",
+"uploadText": "上传您的文件",
+"dragDropText": "拖放或点击上传文件",
+"clickText": "点击选择或拖至此处",
+"startButton": "立即免费试用"
+},
+"testimonials": {
+"title": "客户怎么说",
+"subtitle": "各行业公司已经通过 Smart Read 改造了他们的流程",
+"items": [
+{
+"name": "João Silva",
+"role": "运营总监",
+"company": "LogTech 巴西",
+"text": "Smart Read 将我们的文件处理时间减少了 75%。过去需要几天的工作，现在只需几小时，而且更精准。"
+},
+{
+"name": "Maria Santos",
+"role": "首席技术官",
+"company": "全球进口商",
+"text": "与我们的 ERP 系统集成出奇地简单。现在我们拥有从文件到系统的持续数据流。"
+},
+{
+"name": "Carlos Mendes",
+"role": "财务经理",
+"company": "TechImport",
+"text": "Smart Read 在发票和国际发票数据提取上的准确性帮助我们消除了人工错误，加快了流程。"
+}
+]
+}
+}
+}
+

@@ -1,0 +1,118 @@
+{
+"home": {
+"hero": {
+"mainTitle": "Eliminieren Sie 87 % der manuellen Eingabe im Außenhandel",
+"subtitle": "Ersetzen Sie stundenlange Eingaben durch Sekunden der Verarbeitung mit modernster künstlicher Intelligenz",
+"description": "Handelsrechnungen, Packlisten, Konnossemente, Finanzdokumente und vieles mehr.",
+"buttons": {
+"insert": "Einfügen / Hochladen",
+"upload": "Hochladen",
+"ai": "KI",
+"excel": "Excel",
+"erp": "ERP",
+"systems": "Systeme",
+"email": "Ihre E-Mail",
+"tryNow": "Jetzt ausprobieren"
+}
+},
+"howItWorks": {
+"title": "Wie Smart Read funktioniert",
+"subtitle": "In 4 Schritten werden Ihre Dokumente mit KI zu fertigen Daten",
+"steps": {
+"step1": {
+"title": "Senden Sie Ihre Dokumente mit einem Klick",
+"description": "Laden Sie Ihre Dokumente in verschiedenen Formaten hoch oder ziehen Sie sie direkt in die Plattform",
+"formats": "Excel, PDF, JPEG, Word, JSON, XML, CSV"
+},
+"step2": {
+"title": "Lassen Sie die KI für Sie arbeiten",
+"description": "Unsere KI analysiert die Dokumente, identifiziert und extrahiert Informationen mit hoher Genauigkeit",
+"processingTime": "Durchschnittliche Verarbeitungszeit: 20 Sekunden pro Dokument"
+},
+"step3": {
+"title": "Überprüfen und anpassen, nur wenn nötig",
+"description": "Sie haben die volle Kontrolle, um Daten vor dem Abschluss zu überprüfen oder zu korrigieren",
+"accuracy": "Genauigkeitsrate: 87 % korrekt"
+},
+"step4": {
+"title": "Laden Sie die Daten herunter oder integrieren Sie sie",
+"description": "Exportieren Sie Ergebnisse in Excel, XML, TXT, JSON und verwenden Sie sie direkt in Ihren Systemen, ERPs oder internen Prozessen",
+"exportFormats": "Excel, TXT, XML, JSON, Excel, PDF"
+}
+}
+},
+"integration": {
+"title": "Integrieren Sie Smart Read in Ihre aktuellen Systeme",
+"description": "Plug-and-Play-Integration mit: Excel, SAP, Totvs, Dati Import, One Source und mehr",
+"systems": "Excel, SAP, Totvs, Dati Import, One Source"
+},
+"spreadsheets": {
+"title": "Übertragen Sie Ihre Daten in jede Tabellenkalkulation",
+"description": "Von Smart Read direkt in die Tabellen, die Sie täglich verwenden",
+"excel": {
+"title": "Excel",
+"description": "Erstellen Sie vollständige Excel-Tabellen aus den extrahierten Daten, mit vorbereiteten Spalten und Berechnungen",
+"features": ["Ein-Klick-Export", "Organisierte Spalten", "Automatische Formeln"]
+},
+"googleSheets": {
+"title": "Google Sheets",
+"description": "Senden Sie Daten direkt an Google Sheets und arbeiten Sie in Echtzeit mit Ihrem Team zusammen, egal wo Sie sind",
+"features": ["Automatische Synchronisierung", "Einfaches Teilen", "Echtzeit-Updates"]
+},
+"csvXlsx": {
+"title": "CSV/XLSX",
+"description": "Exportieren Sie in universelle Formate, die mit jeder Tabellenkalkulationssoftware oder Datenbank kompatibel sind",
+"features": ["Universelle Kompatibilität", "Anpassung von Trennzeichen", "Konfigurierbare Kodierung"]
+}
+},
+"security": {
+"title": "Umfassender Datenschutz",
+"description": "Globale Zertifizierungen, robuste Server und Verschlüsselung, um den Schutz Ihrer sensiblen Informationen zu gewährleisten",
+"encryption": {
+"title": "Erweiterte Verschlüsselung",
+"description": "Alle gesendeten und verarbeiteten Daten sind Ende-zu-Ende-verschlüsselt, sodass nur Sie Zugriff auf die Informationen Ihres Unternehmens haben. Keine Preise, Verträge oder Dokumente werden offengelegt"
+},
+"infrastructure": {
+"title": "Robuste AWS-Infrastruktur",
+"description": "Hosting in der AWS-Cloud mit skalierbarer Architektur, automatischen Backups und geografischer Redundanz. Ihr Unternehmen arbeitet mit derselben Technologie wie die größten Unternehmen der Welt"
+},
+"certifications": {
+"title": "Zertifizierungen und Compliance",
+"description": "Wir folgen den wichtigsten internationalen Standards",
+"standards": "ISO 27001, ISO 27017, ISO 27018, PCI-DSS, SOC 1/2/3, LGPD und DSGVO"
+}
+},
+"cta": {
+"title": "Sehen Sie Smart Read jetzt in Aktion",
+"description": "Laden Sie ein beliebiges Dokument hoch und sehen Sie, wie Ihre Daten in Sekunden mit künstlicher Intelligenz extrahiert werden",
+"uploadText": "Laden Sie Ihr Dokument hoch",
+"dragDropText": "Ziehen, ablegen oder klicken, um Ihre Datei hochzuladen",
+"clickText": "Klicken Sie, um auszuwählen, oder ziehen Sie hierher",
+"startButton": "Jetzt kostenlos starten"
+},
+"testimonials": {
+"title": "Was unsere Kunden sagen",
+"subtitle": "Unternehmen aus verschiedenen Branchen haben ihre Prozesse bereits mit Smart Read transformiert",
+"items": [
+{
+"name": "João Silva",
+"role": "Betriebsleiter",
+"company": "LogTech Brasilien",
+"text": "Smart Read hat unsere Dokumentenverarbeitungszeit um 75 % reduziert. Was früher Tage dauerte, wird jetzt in Stunden erledigt, mit viel höherer Genauigkeit."
+},
+{
+"name": "Maria Santos",
+"role": "CTO",
+"company": "Global Importeur",
+"text": "Die Integration mit unserem ERP war überraschend einfach. Jetzt haben wir einen kontinuierlichen Datenfluss von den Dokumenten in unsere Systeme."
+},
+{
+"name": "Carlos Mendes",
+"role": "Finanzmanager",
+"company": "TechImport",
+"text": "Die Genauigkeit von Smart Read bei der Datenextraktion aus Steuerdokumenten und internationalen Rechnungen hat uns geholfen, manuelle Fehler zu eliminieren und unsere Prozesse zu beschleunigen."
+}
+]
+}
+}
+}

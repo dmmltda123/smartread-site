@@ -1,0 +1,59 @@
+{
+  "home": {
+    "menu": {
+      "howItWorks": "Como funciona",
+      "integrations": "Integrações",
+      "security": "Segurança",
+      "pricing": "Preços"
+    },
+    "cta": {
+      "talkToTeam": "Fale com nossa equipe",
+      "startButton": "Comece grátis agora"
+    },
+    "hero": {
+      "mainTitle": "Elimine <span class=\"gradient-text-hero\">87%</span> da digitação do <span class=\"gradient-text-hero\">Comércio Exterior</span>",
+      "subtitle": "Substitua horas de digitação por segundos de processamento utilizando a mais avançada inteligência artificial: invoices, packings, BLs, documentos financeiros e muito mais",
+      "description": "Invoices, packings, BLs, documentos financeiros e muito mais.",
+      "buttons": {
+        "insert": "Inserir / Upload",
+        "upload": "Upload",
+        "ai": "IA",
+        "excel": "Excel",
+        "erp": "ERP",
+        "systems": "Sistemas",
+        "email": "Seu e-mail",
+        "tryNow": "Teste agora"
+      }
+    },
+    "howItWorks": {
+      "title": "Como o Smart Read funciona",
+      "subtitle": "Em 4 etapas, seus documentos viram dados prontos com IA",
+      "steps": {
+        "step1": {
+          "title": "1. Envie seus documentos com um clique",
+          "description": "Faça upload dos seus documentos em diversos formatos ou arraste-os diretamente para a plataforma",
+          "formatsTitle": "Múltiplos formatos suportados",
+          "formats": "Excel, PDF, JPEG, Word, JSON, XML, CSV"
+        },
+        "step2": {
+          "title": "2. Deixe a IA trabalhar por você",
+          "description": "Nossa IA analisa os documentos, identificando e extraindo informações com alta precisão",
+          "processingTimeTitle": "Tempo médio de processamento",
+          "processingTime": "20 segundos por documento"
+        },
+        "step3": {
+          "title": "3. Revise e ajuste apenas se necessário",
+          "description": "Você tem controle total para revisar ou corrigir dados antes de finalizar",
+          "accuracyTitle": "Taxa de precisão",
+          "accuracy": "87% de acertos"
+        },
+        "step4": {
+          "title": "4. Baixe ou integre os dados",
+          "description": "Exporte resultados em Excel, XML, TXT, Json e use-os diretamente nos seus sistemas, ERP's ou processos internos",
+          "formatsTitle": "Formatos de exportação",
+          "formats": "Excel, TXT, XML, JSON, Excel, PDF"
+        }
+      }
+    }
+  }
+} 

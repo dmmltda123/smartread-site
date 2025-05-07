@@ -22,6 +22,25 @@
                 <li><a href="#seguranca">Segurança</a></li>
                 <li><a href="#precos">Preços</a></li>
             </ul>
+            <div class="language-selector">
+                <button type="button" class="language-btn">
+                    <img src="assets/flags/br.svg" alt="Português" id="current-lang-flag">
+                    <span id="current-lang-text">PT</span>
+                    <svg class="arrow-down" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="language-menu" id="languageMenu">
+                    <button type="button" class="language-option" data-lang="pt">
+                        <img src="assets/flags/br.svg" alt="Português">
+                        <span>Português</span>
+                    </button>
+                    <button type="button" class="language-option" data-lang="en">
+                        <img src="assets/flags/us.svg" alt="English">
+                        <span>English</span>
+                    </button>
+                </div>
+            </div>
             <div class="header-cta-area">
                 <a href="#" class="header-cta-btn">Fale com nossa equipe <span class="arrow">→</span></a>
             </div>
@@ -428,9 +447,7 @@
                         <div class="pricing-header">
                             <h3>Essencial</h3>
                             <div class="price">
-                                <span class="currency">R$</span>
-                                <span class="amount">19,90</span>
-                                <span class="period">/documento</span>
+                                <span class="currency">R$</span><span class="amount">19,90</span><span class="unit">/documento</span>
                             </div>
                         </div>
                         <ul class="features">
@@ -459,9 +476,7 @@
                         <div class="pricing-header">
                             <h3>Growth</h3>
                             <div class="price">
-                                <span class="currency">R$</span>
-                                <span class="amount">12,90</span>
-                                <span class="period">/documento</span>
+                                <span class="currency">R$</span><span class="amount">12,90</span><span class="unit">/documento</span>
                             </div>
                         </div>
                         <ul class="features">
@@ -497,9 +512,7 @@
                         <div class="pricing-header">
                             <h3>Enterprise</h3>
                             <div class="price">
-                                <span class="currency">R$</span>
-                                <span class="amount">9,90</span>
-                                <span class="period">/documento</span>
+                                <span class="currency">R$</span><span class="amount">9,90</span><span class="unit">/documento</span>
                             </div>
                         </div>
                         <ul class="features">
@@ -570,6 +583,7 @@
       </div>
     </footer>
 
+    <!-- Remove i18next scripts -->
     <script src="script.js"></script>
     <script>
     // Carrossel de integrações (logos)

@@ -412,31 +412,24 @@ function updateContent() {
         });
 
         // Traduzir a seção "Múltiplos formatos suportados"
-const formatosHeader = document.querySelector('.múltiplos-formatos-suportados') || 
-document.querySelector('.file-formats-header') ||
-document.querySelector('h3:contains("Múltiplos formatos")');
+        // Encontra todos os elementos de texto na seção de formatos
+        const textoFormatos = document.querySelectorAll('.step-text p, .step-text h3');
+        textoFormatos.forEach(elemento => {
+            // Verifique se o texto contém "formatos suportados"
+            if (elemento.textContent.includes('formatos suportados')) {
+                if (currentLanguage === 'en') {
+                    elemento.textContent = 'Multiple supported formats';
+                } else {
+                    elemento.textContent = 'Múltiplos formatos suportados';
+                }
+            }
 
-// Se não encontrar com os seletores acima, tente encontrar diretamente no container
-if (!formatosHeader) {
-// Encontra todos os elementos de texto na seção de formatos
-const textoFormatos = document.querySelectorAll('.step-text p, .step-text h3');
-textoFormatos.forEach(elemento => {
-// Verifique se o texto contém "formatos suportados"
-if (elemento.textContent.includes('formatos suportados')) {
-if (currentLanguage === 'en') {
-elemento.textContent = 'Multiple supported formats';
-} else {
-elemento.textContent = 'Múltiplos formatos suportados';
-}
-}
-
-// Verifique se o texto contém a lista de formatos
-if (elemento.textContent.includes('Excel, PDF, JPEG')) {
-// Este texto geralmente não precisa de tradução pois são nomes de formatos
-console.log('Encontrou lista de formatos:', elemento.textContent);
-}
-});
-}
+            // Verifique se o texto contém a lista de formatos
+            if (elemento.textContent.includes('Excel, PDF, JPEG')) {
+                // Este texto geralmente não precisa de tradução pois são nomes de formatos
+                console.log('Encontrou lista de formatos:', elemento.textContent);
+            }
+        });
         // Update hero section
         const heroTitle = document.querySelector('#hero h1');
         if (heroTitle && data.hero) {

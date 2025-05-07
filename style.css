@@ -2276,3 +2276,31 @@ footer {
         position: static;
     }
 }
+.language-selector {
+    margin-top: -20px; /* Move o seletor de idioma 20px para cima */
+}
+/* Ajuste específico para o menu em espanhol e alemão */
+[lang="es"] .header-menu li a,
+html[lang="es"] .header-menu li a,
+html:lang(es) .header-menu li a,
+[lang="de"] .header-menu li a,
+html[lang="de"] .header-menu li a,
+html:lang(de) .header-menu li a,
+.language-selector:has(img[alt="es"]) ~ .header-menu li a,
+.language-selector:has(img[alt="de"]) ~ .header-menu li a {
+    white-space: nowrap; /* Impede a quebra de linha */
+    font-size: 1.1rem; /* Reduz levemente o tamanho da fonte */
+}
+
+/* Ajuste específico para o item "Cómo funciona" em espanhol e "Wie es funktioniert" em alemão */
+[lang="es"] a[href*="funciona"],
+html[lang="es"] a[href*="funciona"],
+html:lang(es) a[href*="funciona"],
+[lang="de"] a[href*="funktioniert"],
+html[lang="de"] a[href*="funktioniert"],
+html:lang(de) a[href*="funktioniert"],
+.language-selector:has(img[alt="es"]) ~ .header-menu li a[href*="funciona"],
+.language-selector:has(img[alt="de"]) ~ .header-menu li a[href*="funktioniert"] {
+    white-space: nowrap;
+    font-size: 1.05rem; /* Reduzido um pouco mais para garantir que caiba */
+}

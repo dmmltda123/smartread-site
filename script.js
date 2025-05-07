@@ -569,6 +569,53 @@ function updateContent() {
         if (howItWorksSubtitle && data.howItWorks) {
             howItWorksSubtitle.textContent = data.howItWorks.subtitle;
         }
+
+      // Atualizar botão do header CTA
+const headerCtaBtn = document.querySelector('.header-cta-btn');
+if (headerCtaBtn) {
+    // Tentar diferentes caminhos possíveis para o texto do botão
+    let buttonText = null;
+    
+    if (data.cta && data.cta.talkToTeam) {
+        // Para arquivos que usam a estrutura "cta.talkToTeam" (espanhol, alemão)
+        buttonText = data.cta.talkToTeam;
+        console.log('Usando data.cta.talkToTeam:', buttonText);
+    } else if (data.menu && data.menu.contactButton) {
+        // Para arquivos que usam a estrutura "menu.contactButton" (inglês)
+        buttonText = data.menu.contactButton;
+        console.log('Usando data.menu.contactButton:', buttonText);
+    } else if (currentLanguage === 'pt') {
+        // Caso específico para português
+        // Verifique todos os caminhos possíveis no objeto português
+        if (data.buttons && data.buttons.contact) {
+            buttonText = data.buttons.contact;
+            console.log('Usando data.buttons.contact para PT:', buttonText);
+        } else if (data.header && data.header.contactButton) {
+            buttonText = data.header.contactButton;
+            console.log('Usando data.header.contactButton para PT:', buttonText);
+        } else {
+            // Fallback com texto fixo caso não encontre
+            buttonText = "Fale com nossa equipe";
+            console.log('Usando texto fixo para PT:', buttonText);
+        }
+    }
+    
+    // Verificação adicional para depuração
+    console.log('Idioma atual:', currentLanguage, 'Texto do botão encontrado:', buttonText);
+    
+    if (buttonText) {
+        console.log('Atualizando botão CTA para:', buttonText);
+        
+        // Preservar a seta (→) se existir
+        const arrowSpan = headerCtaBtn.querySelector('.arrow');
+        if (arrowSpan) {
+            headerCtaBtn.textContent = buttonText + ' ';
+            headerCtaBtn.appendChild(arrowSpan);
+        } else {
+            headerCtaBtn.textContent = buttonText;
+        }
+    }
+}
         
         // Update steps
         document.querySelectorAll('.step').forEach((step, index) => {

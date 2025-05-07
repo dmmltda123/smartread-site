@@ -8,7 +8,7 @@
             "contactButton": "Contact our team"
         },
         "hero": {
-            "mainTitle": "Eliminate 87% of manual data entry in Foreign Trade",
+            "mainTitle": "Eliminate <span class=\"gradient-text-hero\">87%</span> of manual data entry in <span class=\"gradient-text-hero\">Foreign Trade</span>",
             "subtitle": "Replace hours of data entry with seconds of processing using advanced artificial intelligence",
             "description": "Commercial invoices, packing lists, bills of lading, financial documents, and much more.",
             "buttons": {
@@ -42,13 +42,13 @@
                 "step3": {
   "title": "Review and adjust only if necessary",
   "description": "You have full control to review or correct data before finalizing",
-  "accuracy": "Accuracy rate:",
+  "accuracyLabel": "Accuracy rate:",
   "accuracyValue": "87% accuracy"
 },
                 "step4": {
                     "title": "Download or integrate the data",
-                    "description": "Export results in Excel, XML, TXT, JSON, and use them directly in your systems, ERPs, or internal processes",
-                    "exportFormats": "Export formats"
+                    "exportFormats": "Excel, XML, TXT, JSON and PDF",
+                    "exportFormatsLabel": "Export formats"
                 }
             },
             "buttons": {

@@ -7,8 +7,8 @@
 "pricing": "Preços"
 },
 "cta": {
-"talkToTeam": "Fale com nossa equipe",
-"startButton": "Comece grátis agora"
+"contactButton": "Fale com nossa equipe",
+"contactButton": "Comece grátis agora"
 },
 "hero": {
 "mainTitle": "Elimine <span class=\"gradient-text-hero\">87%</span> da digitação do <span class=\"gradient-text-hero\">Comércio Exterior</span>",

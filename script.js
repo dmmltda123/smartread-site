@@ -2,13 +2,15 @@
 function changeLanguage(lang) {
     console.log('Language change requested to:', lang);
     loadAndSetLanguage(lang);
+    // Aumentando o tempo para garantir que a tradução principal seja carregada primeiro
     setTimeout(function() {
       traduzirContainersEspeciais();
-    }, 500);
-  }
-  
-  // Garantir que está no escopo global
-  window.changeLanguage = changeLanguage;
+    }, 800); // Aumentado de 500ms para 800ms para maior segurança
+}
+
+// Garantir que está no escopo global
+window.changeLanguage = changeLanguage;
+
 // === Smooth Scrolling ===
 document.querySelectorAll('header a[href^="#"], footer a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -94,36 +96,95 @@ function handleFiles(files) {
         // Note: The original screenshot shows icons for PDF, Word, Excel, and Image (generic)
         // We'll allow common image types and document types shown.
         if (allowedTypes.includes(file.type) || file.type.startsWith('image/')) {
-            uploadLabel.textContent = `Arquivo selecionado: ${file.name}`;
-            resultPlaceholder.textContent = `Processando ${file.name}... (Simulação)`;
+            uploadLabel.textContent = getTranslation(currentLanguage, 'upload.fileSelected', file.name);
+            resultPlaceholder.textContent = getTranslation(currentLanguage, 'upload.processing', file.name);
             resultPlaceholder.style.padding = '10px'; // Add some padding for text
             resultPlaceholder.style.textAlign = 'left';
             resultPlaceholder.style.color = 'var(--text-medium)';
 
             // Simulate processing delay
             setTimeout(() => {
-                resultPlaceholder.textContent = `Resultado Simulado para: ${file.name}\nTipo: ${file.type}\nTamanho: ${(file.size / 1024).toFixed(2)} KB`;
+                resultPlaceholder.textContent = getTranslation(currentLanguage, 'upload.result', {
+                    fileName: file.name,
+                    fileType: file.type,
+                    fileSize: (file.size / 1024).toFixed(2)
+                });
                 // Add a copy button dynamically or enable a hidden one
             }, 1500);
         } else {
-            resultPlaceholder.textContent = 'Formato de arquivo não suportado.';
+            resultPlaceholder.textContent = getTranslation(currentLanguage, 'upload.unsupportedFormat');
             resultPlaceholder.style.padding = '10px';
             resultPlaceholder.style.textAlign = 'center';
             resultPlaceholder.style.color = 'red';
-            uploadLabel.textContent = 'Clique para selecionar ou arraste aqui';
+            uploadLabel.textContent = getTranslation(currentLanguage, 'upload.dragAndDrop');
         }
     } else {
-         uploadLabel.textContent = 'Clique para selecionar ou arraste aqui';
+         uploadLabel.textContent = getTranslation(currentLanguage, 'upload.dragAndDrop');
          resultPlaceholder.textContent = ''; // Clear placeholder
          resultPlaceholder.style.padding = '0';
     }
 }
 
-// === Placeholder for Hamburger Menu ===
-// Add HTML for hamburger button and mobile menu structure first
-/*
-const hamburgerBtn = document.getElementById('hamburger-btn'); // e.g., <button id=
-*/
+// Função auxiliar para obter traduções com placeholders
+function getTranslation(lang, key, params) {
+    if (!translations[lang]) return '';
+    
+    // Estrutura básica de traduções para o componente de upload
+    const uploadTranslations = {
+        'pt': {
+            'upload.fileSelected': 'Arquivo selecionado: $fileName',
+            'upload.processing': 'Processando $fileName... (Simulação)',
+            'upload.result': 'Resultado Simulado para: $fileName\nTipo: $fileType\nTamanho: $fileSize KB',
+            'upload.unsupportedFormat': 'Formato de arquivo não suportado.',
+            'upload.dragAndDrop': 'Clique para selecionar ou arraste aqui'
+        },
+        'en': {
+            'upload.fileSelected': 'File selected: $fileName',
+            'upload.processing': 'Processing $fileName... (Simulation)',
+            'upload.result': 'Simulated Result for: $fileName\nType: $fileType\nSize: $fileSize KB',
+            'upload.unsupportedFormat': 'Unsupported file format.',
+            'upload.dragAndDrop': 'Click to select or drag here'
+        },
+        'es': {
+            'upload.fileSelected': 'Archivo seleccionado: $fileName',
+            'upload.processing': 'Procesando $fileName... (Simulación)',
+            'upload.result': 'Resultado Simulado para: $fileName\nTipo: $fileType\nTamaño: $fileSize KB',
+            'upload.unsupportedFormat': 'Formato de archivo no soportado.',
+            'upload.dragAndDrop': 'Haga clic para seleccionar o arrastre aquí'
+        },
+        'de': {
+            'upload.fileSelected': 'Datei ausgewählt: $fileName',
+            'upload.processing': 'Verarbeitung von $fileName... (Simulation)',
+            'upload.result': 'Simuliertes Ergebnis für: $fileName\nTyp: $fileType\nGröße: $fileSize KB',
+            'upload.unsupportedFormat': 'Nicht unterstütztes Dateiformat.',
+            'upload.dragAndDrop': 'Klicken Sie zum Auswählen oder ziehen Sie hier'
+        },
+        'zh': {
+            'upload.fileSelected': '已选择文件：$fileName',
+            'upload.processing': '正在处理 $fileName...（模拟）',
+            'upload.result': '$fileName 的模拟结果\n类型：$fileType\n大小：$fileSize KB',
+            'upload.unsupportedFormat': '不支持的文件格式。',
+            'upload.dragAndDrop': '点击选择或拖拽到此处'
+        }
+    };
+    
+    // Pegar o texto base para a chave solicitada
+    let text = uploadTranslations[lang]?.[key] || uploadTranslations['en']?.[key] || key;
+    
+    // Substituir placeholders se necessário
+    if (params) {
+        if (typeof params === 'string') {
+            text = text.replace('$fileName', params);
+        } else {
+            // Para objetos mais complexos com múltiplos parâmetros
+            for (const [paramKey, paramValue] of Object.entries(params)) {
+                text = text.replace(`$${paramKey}`, paramValue);
+            }
+        }
+    }
+    
+    return text;
+}
 
 // === Video Controls ===
 document.addEventListener('DOMContentLoaded', function() {
@@ -347,8 +408,6 @@ function closeLanguageMenu(event) {
     }
 }
 
-
-
 // Add click event listeners when DOM loads
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM Content Loaded - Setting up language switcher');
@@ -366,8 +425,6 @@ document.addEventListener('DOMContentLoaded', function() {
             changeLanguage(lang);
         });
     });
-
-    
 
     // Add click listener to language button
     const languageBtn = document.querySelector('.language-btn');
@@ -392,7 +449,31 @@ let currentLanguage = 'pt';
 async function loadAndSetLanguage(lang) {
     try {
         console.log(`Loading language: ${lang}`);
-        const response = await fetch(`smartread_tradução_site_${lang === 'en' ? 'ingles' : 'portugues'}`);
+        // Atualizando para usar nomes de arquivos padronizados
+        let jsonFileName;
+        
+        // Definir o nome do arquivo baseado no idioma selecionado
+        switch(lang) {
+            case 'pt':
+                jsonFileName = 'smartread_traducao_site_portugues';
+                break;
+            case 'en':
+                jsonFileName = 'smartread_tradução_site_ingles';
+                break;
+            case 'es':
+                jsonFileName = 'smartread_tradução_site_espanhol';
+                break;
+            case 'de':
+                jsonFileName = 'smartread_traducao_site_alemao';
+                break;
+            case 'zh':
+                jsonFileName = 'smartread_tradução_site_chines';
+                break;
+            default:
+                jsonFileName = 'smartread_traducao_site_portugues';
+        }
+        
+        const response = await fetch(jsonFileName);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -404,6 +485,9 @@ async function loadAndSetLanguage(lang) {
         console.log('Updating content for language:', lang);
         updateContent();
         updateUIElements(lang);
+        
+        // Disparar evento personalizado quando as traduções forem carregadas
+        document.dispatchEvent(new CustomEvent('languageLoaded', { detail: { language: lang } }));
     } catch (error) {
         console.error('Error loading language:', error);
     }
@@ -437,19 +521,19 @@ function updateContent() {
         textoFormatos.forEach(elemento => {
             // Verifique se o texto contém "formatos suportados"
             if (elemento.textContent.includes('formatos suportados')) {
-                if (currentLanguage === 'en') {
-                    elemento.textContent = 'Multiple supported formats';
-                } else {
-                    elemento.textContent = 'Múltiplos formatos suportados';
+                if (data.howItWorks && data.howItWorks.steps && data.howItWorks.steps.step1 && data.howItWorks.steps.step1.labelSupportedFormats) {
+                    elemento.textContent = data.howItWorks.steps.step1.labelSupportedFormats;
                 }
             }
 
             // Verifique se o texto contém a lista de formatos
             if (elemento.textContent.includes('Excel, PDF, JPEG')) {
-                // Este texto geralmente não precisa de tradução pois são nomes de formatos
-                console.log('Encontrou lista de formatos:', elemento.textContent);
+                if (data.howItWorks && data.howItWorks.steps && data.howItWorks.steps.step1 && data.howItWorks.steps.step1.formats) {
+                    elemento.textContent = data.howItWorks.steps.step1.formats;
+                }
             }
         });
+        
         // Update hero section
         const heroTitle = document.querySelector('#hero h1');
         if (heroTitle && data.hero) {
@@ -486,7 +570,6 @@ function updateContent() {
             howItWorksSubtitle.textContent = data.howItWorks.subtitle;
         }
         
-
         // Update steps
         document.querySelectorAll('.step').forEach((step, index) => {
             const stepNum = index + 1;
@@ -503,8 +586,14 @@ function updateContent() {
 
         // Atualizar label "Tempo médio de processamento" (ou "Average processing time")
         const processingTimeLabel = document.querySelector('.processing-time-label');
-        if (processingTimeLabel && data.howItWorks && data.howItWorks.steps && data.howItWorks.steps.step2 && data.howItWorks.steps.step2.processingTime) {
-            processingTimeLabel.textContent = data.howItWorks.steps.step2.processingTime;
+        if (processingTimeLabel && data.howItWorks && data.howItWorks.steps && data.howItWorks.steps.step2 && data.howItWorks.steps.step2.processingTimeLabel) {
+            processingTimeLabel.textContent = data.howItWorks.steps.step2.processingTimeLabel;
+        }
+        
+        // Atualizar valor do tempo de processamento
+        const processingTimeValue = document.querySelector('.processing-time-value');
+        if (processingTimeValue && data.howItWorks && data.howItWorks.steps && data.howItWorks.steps.step2 && data.howItWorks.steps.step2.processingTimeValue) {
+            processingTimeValue.textContent = data.howItWorks.steps.step2.processingTimeValue;
         }
 
         // Update integrations section
@@ -556,7 +645,9 @@ function updateContent() {
                     const featuresList = card.querySelectorAll('ul li');
                     if (featuresList && cardData.features) {
                         featuresList.forEach((li, i) => {
-                            li.textContent = cardData.features[i] || '';
+                            if (cardData.features[i]) {
+                                li.textContent = cardData.features[i];
+                            }
                         });
                     }
                 }
@@ -589,50 +680,49 @@ function updateContent() {
             });
         }
 
-        // Seção de upload/teste-extracao (traduz título, subtítulo, label e placeholder só em inglês)
+        // Seção de upload/teste-extracao
         const testSection = translations[currentLanguage].home.cta;
         if (testSection) {
-            // Só traduzir título, subtítulo, label e placeholder se for inglês
-            if (currentLanguage === 'en') {
-                const testTitle = document.querySelector('#teste-extracao h2');
-                if (testTitle && testSection.title) testTitle.textContent = testSection.title;
-                const testSubtitle = document.querySelector('#teste-extracao .section-subtitle');
-                if (testSubtitle && testSection.description) testSubtitle.textContent = testSection.description;
-                // LOGS DE DEPURAÇÃO
-                console.log('LANG:', currentLanguage);
-                console.log('data.howItWorks.steps.step1.supportedFormats:', data.howItWorks?.steps?.step1?.supportedFormats);
-                console.log('data.howItWorks.steps.step2.processingTime:', data.howItWorks?.steps?.step2?.processingTime);
-                // Label "Formatos suportados" (seletor flexível e JSON correto)
-                let formatsLabel = document.querySelector('#teste-extracao .supported-formats span');
-                if (!formatsLabel) {
-                    formatsLabel = document.querySelector('#teste-extracao .supported-formats');
-                }
-                if (formatsLabel && data.labels && data.labels.supportedFormats) {
-                    formatsLabel.textContent = data.labels.supportedFormats + ':';
-                }
-                // Label "Tempo médio de processamento"
-                const processingTimeLabel = document.querySelector('.processing-time-label');
-                if (processingTimeLabel && data.labels && data.labels.processingTime) {
-                    processingTimeLabel.textContent = data.labels.processingTime;
-                }
-                // Placeholder do input de e-mail
-                const emailInputTest = document.querySelector('#teste-extracao input[type="email"]');
-                if (emailInputTest && testSection.emailPlaceholder) emailInputTest.placeholder = testSection.emailPlaceholder;
+            const testTitle = document.querySelector('#teste-extracao h2');
+            if (testTitle && testSection.title) testTitle.textContent = testSection.title;
+            
+            const testSubtitle = document.querySelector('#teste-extracao .section-subtitle');
+            if (testSubtitle && testSection.description) testSubtitle.textContent = testSection.description;
+            
+            // Formatação suportada
+            let formatsLabel = document.querySelector('#teste-extracao .supported-formats span');
+            if (!formatsLabel) {
+                formatsLabel = document.querySelector('#teste-extracao .supported-formats');
             }
+            
+            // Usando labels dos dados para maior compatibilidade entre os JSONs
+            if (formatsLabel && data.labels && data.labels.supportedFormats) {
+                formatsLabel.textContent = data.labels.supportedFormats + ':';
+            }
+            
+            // Upload de documento texto
             const uploadTitle = document.querySelector('#teste-extracao h3');
             if (uploadTitle && testSection.uploadText) uploadTitle.textContent = testSection.uploadText;
-            // Instrução de upload (dragDropText) - garantir que é o <p> correto
+            
+            // Instrução de upload
             let uploadDesc = document.querySelector('#teste-extracao .upload-instruction');
             if (!uploadDesc) {
-                // fallback: segundo <p> dentro do #teste-extracao
                 const allPs = document.querySelectorAll('#teste-extracao p');
                 if (allPs.length > 1) uploadDesc = allPs[1];
             }
             if (uploadDesc && testSection.dragDropText) uploadDesc.textContent = testSection.dragDropText;
+            
+            // Label do upload
             const uploadLabel = document.querySelector('#teste-extracao label');
             if (uploadLabel && testSection.clickText) uploadLabel.textContent = testSection.clickText;
+            
+            // Botão de iniciar/testar
             const startBtnTest = document.querySelector('#teste-extracao button[type="submit"]');
             if (startBtnTest && testSection.button) startBtnTest.textContent = testSection.button;
+            
+            // Email placeholder
+            const emailInputTest = document.querySelector('#teste-extracao input[type="email"]');
+            if (emailInputTest && testSection.emailPlaceholder) emailInputTest.placeholder = testSection.emailPlaceholder;
         }
 
         // Seção de depoimentos
@@ -640,8 +730,10 @@ function updateContent() {
         if (testimonialsSection) {
             const testimonialsTitle = document.querySelector('#depoimentos h2');
             if (testimonialsTitle) testimonialsTitle.textContent = testimonialsSection.title;
+            
             const testimonialsSubtitle = document.querySelector('#depoimentos .section-subtitle');
             if (testimonialsSubtitle) testimonialsSubtitle.textContent = testimonialsSection.subtitle;
+            
             const testimonialCards = document.querySelectorAll('#depoimentos .testimonial-card');
             if (testimonialCards.length && testimonialsSection.items) {
                 testimonialCards.forEach((card, idx) => {
@@ -649,8 +741,10 @@ function updateContent() {
                     if (item) {
                         const quote = card.querySelector('.quote');
                         if (quote) quote.textContent = item.text;
+                        
                         const name = card.querySelector('h4');
                         if (name) name.textContent = item.name;
+                        
                         const role = card.querySelector('.author-details p');
                         if (role) role.innerHTML = `${item.role},<br>${item.company}`;
                     }
@@ -658,98 +752,93 @@ function updateContent() {
             }
         }
 
-        // Seção de preços (restaurado para preencher currency, amount e unit separadamente)
-const pricingSection = translations[currentLanguage].home.pricing;
-if (pricingSection) {
-    const pricingTitle = document.querySelector('#precos h2');
-    if (pricingTitle) pricingTitle.textContent = pricingSection.title;
-    const pricingSubtitle = document.querySelector('#precos .section-subtitle');
-    if (pricingSubtitle) pricingSubtitle.textContent = pricingSection.subtitle;
-    const pricingCards = document.querySelectorAll('#precos .pricing-card');
-    if (pricingCards.length && pricingSection.plans) {
-        pricingCards.forEach((card, idx) => {
-            const plan = pricingSection.plans[idx];
-            if (plan) {
-                const cardTitle = card.querySelector('h3');
-                if (cardTitle) cardTitle.textContent = plan.name;
-                // Preço
-                const priceCurrency = card.querySelector('.price .currency');
-                const priceAmount = card.querySelector('.price .amount');
-                const priceUnit = card.querySelector('.price .unit');
-                if (priceCurrency) priceCurrency.textContent = plan.currency || '';
-                if (priceAmount) priceAmount.textContent = plan.price || '';
-                if (priceUnit) {
-                    console.log('Atualizando .unit para:', plan.unit, 'no card', idx);
-                    priceUnit.textContent = plan.unit || '';
-                } else {
-                    console.warn('Não encontrou .unit no card', idx);
-                }
-                // Detalhes
-                const details = card.querySelectorAll('ul.features li');
-                if (details && plan.details) {
-                    details.forEach((li, i) => {
-                        li.textContent = plan.details[i] || '';
-                    });
-                }
-                // Traduzir botão "Começar agora"
-                const startButton = card.querySelector('.pricing-button span');
-                if (startButton && plan.button) {
-                    console.log('Traduzindo botão para:', plan.button, 'no card', idx);
-                    startButton.textContent = plan.button;
-                }
+        // Seção de preços
+        const pricingSection = translations[currentLanguage].home.pricing;
+        if (pricingSection) {
+            const pricingTitle = document.querySelector('#precos h2');
+            if (pricingTitle) pricingTitle.textContent = pricingSection.title;
+            
+            const pricingSubtitle = document.querySelector('#precos .section-subtitle');
+            if (pricingSubtitle) pricingSubtitle.textContent = pricingSection.subtitle;
+            
+            const pricingCards = document.querySelectorAll('#precos .pricing-card');
+            if (pricingCards.length && pricingSection.plans) {
+                pricingCards.forEach((card, idx) => {
+                    const plan = pricingSection.plans[idx];
+                    if (plan) {
+                        const cardTitle = card.querySelector('h3');
+                        if (cardTitle) cardTitle.textContent = plan.name;
+                        
+                        // Preço
+                        const priceCurrency = card.querySelector('.price .currency');
+                        const priceAmount = card.querySelector('.price .amount');
+                        const priceUnit = card.querySelector('.price .unit');
+                        
+                        if (priceCurrency) priceCurrency.textContent = plan.currency || '';
+                        if (priceAmount) priceAmount.textContent = plan.price || '';
+                        if (priceUnit) priceUnit.textContent = plan.unit || '';
+                        
+                        // Detalhes
+                        const details = card.querySelectorAll('ul.features li');
+                        if (details && plan.details) {
+                            details.forEach((li, i) => {
+                                if (plan.details[i]) {
+                                    li.textContent = plan.details[i];
+                                }
+                            });
+                        }
+                        
+                        // Botão
+                        const startButton = card.querySelector('.pricing-button span');
+                        if (startButton && plan.button) {
+                            startButton.textContent = plan.button;
+                        }
+                    }
+                });
             }
-        });
-    }
-}
-// Adicionar tradução para os botões "Começar agora"
-const startButton = card.querySelector('.pricing-button span');
-if (startButton && plan.button) {
-    startButton.textContent = plan.button;
-}
-        // Rodapé (corrigido para nova estrutura)
+        }
+
+        // Rodapé
         const footerSection = translations[currentLanguage].home.footer;
         if (footerSection) {
             // Sobre nós
             const aboutTitle = document.querySelector('.footer-col h4');
             if (aboutTitle && footerSection.aboutUs) aboutTitle.textContent = footerSection.aboutUs.title;
+            
             const aboutText = document.querySelector('.footer-col p');
             if (aboutText && footerSection.aboutUs) aboutText.textContent = footerSection.aboutUs.description;
+            
             const visitBtn = document.querySelector('.footer-cta');
             if (visitBtn && footerSection.aboutUs) visitBtn.textContent = footerSection.aboutUs.institutionalButton;
+            
             // Links rápidos
             const quickLinksTitle = document.querySelectorAll('.footer-col h4')[1];
             if (quickLinksTitle && footerSection.quickLinks) quickLinksTitle.textContent = footerSection.quickLinks.title;
+            
             const quickLinks = document.querySelectorAll('.footer-col ul li a');
             if (quickLinks.length && footerSection.quickLinks && footerSection.quickLinks.links) {
                 quickLinks.forEach((a, i) => {
-                    a.textContent = footerSection.quickLinks.links[i] || '';
+                    if (footerSection.quickLinks.links[i]) {
+                        a.textContent = footerSection.quickLinks.links[i];
+                    }
                 });
             }
+            
             // Contato
             const contactTitle = document.querySelectorAll('.footer-col h4')[2];
             if (contactTitle && footerSection.contact) contactTitle.textContent = footerSection.contact.title;
+            
             const emailLabel = document.querySelector('.footer-contact p a');
             if (emailLabel && footerSection.contact) emailLabel.textContent = footerSection.contact.email;
+            
             const phoneLabel = document.querySelectorAll('.footer-contact p')[1];
             if (phoneLabel && footerSection.contact) phoneLabel.textContent = footerSection.contact.phone;
         }
 
         // Atualizar botão do header para usar home.menu.contactButton
         const ctaBtn = document.querySelector('.header-cta-btn');
-        if (ctaBtn && translations[currentLanguage].home.menu.contactButton) {
-            ctaBtn.textContent = translations[currentLanguage].home.menu.contactButton;
-        }
-
-        // Atualizar label de formatos suportados (step1)
-        const labelSupportedFormats = document.querySelector('.label-supported-formats');
-        if (
-          labelSupportedFormats &&
-          data.howItWorks &&
-          data.howItWorks.steps &&
-          data.howItWorks.steps.step1 &&
-          data.howItWorks.steps.step1.labelSupportedFormats
-        ) {
-          labelSupportedFormats.textContent = data.howItWorks.steps.step1.labelSupportedFormats;
+        if (ctaBtn && translations[currentLanguage].home.cta && translations[currentLanguage].home.cta.talkToTeam) {
+            ctaBtn.textContent = translations[currentLanguage].home.cta.talkToTeam;
         }
 
     } catch (error) {
@@ -763,14 +852,33 @@ function updateUIElements(lang) {
     const menu = document.getElementById('languageMenu');
     const arrow = document.querySelector('.arrow-down');
     
-    if (lang === 'pt') {
-        currentFlag.src = 'assets/flags/br.svg';
-        currentText.textContent = 'PT';
-        document.documentElement.lang = 'pt-BR';
-    } else if (lang === 'en') {
-        currentFlag.src = 'assets/flags/us.svg';
-        currentText.textContent = 'EN';
-        document.documentElement.lang = 'en';
+    // Atualizar bandeira e texto do seletor de idioma atual
+    switch(lang) {
+        case 'pt':
+            currentFlag.src = 'assets/flags/br.svg';
+            currentText.textContent = 'PT';
+            document.documentElement.lang = 'pt-BR';
+            break;
+        case 'en':
+            currentFlag.src = 'assets/flags/us.svg';
+            currentText.textContent = 'EN';
+            document.documentElement.lang = 'en';
+            break;
+        case 'es':
+            currentFlag.src = 'assets/flags/es.svg';
+            currentText.textContent = 'ES';
+            document.documentElement.lang = 'es';
+            break;
+        case 'de':
+            currentFlag.src = 'assets/flags/de.svg';
+            currentText.textContent = 'DE';
+            document.documentElement.lang = 'de';
+            break;
+        case 'zh':
+            currentFlag.src = 'assets/flags/cn.svg';
+            currentText.textContent = 'ZH';
+            document.documentElement.lang = 'zh-CN';
+            break;
     }
     
     menu.classList.remove('show');
@@ -792,11 +900,11 @@ function traduzirContainersEspeciais() {
       const formatosSuportadosTexto = document.querySelector('.label-supported-formats');
       const formatosListaTexto = document.querySelector('.formats-list');
       
-      if (formatosSuportadosTexto && data.howItWorks.steps.step1.labelSupportedFormats) {
+      if (formatosSuportadosTexto && data.howItWorks && data.howItWorks.steps && data.howItWorks.steps.step1 && data.howItWorks.steps.step1.labelSupportedFormats) {
         formatosSuportadosTexto.textContent = data.howItWorks.steps.step1.labelSupportedFormats;
       }
       
-      if (formatosListaTexto && data.howItWorks.steps.step1.formats) {
+      if (formatosListaTexto && data.howItWorks && data.howItWorks.steps && data.howItWorks.steps.step1 && data.howItWorks.steps.step1.formats) {
         formatosListaTexto.textContent = data.howItWorks.steps.step1.formats;
       }
       
@@ -804,36 +912,39 @@ function traduzirContainersEspeciais() {
       const tempoProcessamentoTexto = document.querySelector('.processing-time-label');
       const tempoValorTexto = document.querySelector('.processing-time-value');
       
-      if (tempoProcessamentoTexto && data.howItWorks.steps.step2.processingTime) {
-        tempoProcessamentoTexto.textContent = data.howItWorks.steps.step2.processingTime;
+      if (tempoProcessamentoTexto && data.howItWorks && data.howItWorks.steps && data.howItWorks.steps.step2 && data.howItWorks.steps.step2.processingTimeLabel) {
+        tempoProcessamentoTexto.textContent = data.howItWorks.steps.step2.processingTimeLabel;
       }
       
       // Traduzir o valor do tempo de processamento
-      if (tempoValorTexto && data.howItWorks.steps.step2.processingTimeValue) {
+      if (tempoValorTexto && data.howItWorks && data.howItWorks.steps && data.howItWorks.steps.step2 && data.howItWorks.steps.step2.processingTimeValue) {
         tempoValorTexto.textContent = data.howItWorks.steps.step2.processingTimeValue;
         console.log("Valor do tempo de processamento traduzido para:", data.howItWorks.steps.step2.processingTimeValue);
       }
       
-    // 3. Container de taxa de precisão (imagem 3)
-const taxaPrecisaoTexto = document.querySelector('.accuracy-label');
-const taxaValorTexto = document.querySelector('.accuracy-value');
-
-if (taxaPrecisaoTexto && data.howItWorks.steps.step3.accuracy) {
-  taxaPrecisaoTexto.textContent = data.howItWorks.steps.step3.accuracy;
-}
-
-// ADICIONAR ESTA PARTE PARA TRADUZIR O VALOR
-if (taxaValorTexto && data.howItWorks.steps.step3.accuracyValue) {
-  taxaValorTexto.textContent = data.howItWorks.steps.step3.accuracyValue;
-  console.log("Valor da taxa de precisão traduzido para:", data.howItWorks.steps.step3.accuracyValue);
-}
+      // 3. Container de taxa de precisão (imagem 3)
+      const taxaPrecisaoTexto = document.querySelector('.accuracy-label');
+      const taxaValorTexto = document.querySelector('.accuracy-value');
+      
+      if (taxaPrecisaoTexto && data.howItWorks && data.howItWorks.steps && data.howItWorks.steps.step3 && data.howItWorks.steps.step3.accuracyLabel) {
+        taxaPrecisaoTexto.textContent = data.howItWorks.steps.step3.accuracyLabel;
+      }
+      
+      if (taxaValorTexto && data.howItWorks && data.howItWorks.steps && data.howItWorks.steps.step3 && data.howItWorks.steps.step3.accuracyValue) {
+        taxaValorTexto.textContent = data.howItWorks.steps.step3.accuracyValue;
+        console.log("Valor da taxa de precisão traduzido para:", data.howItWorks.steps.step3.accuracyValue);
+      }
       
       // 4. Container de formatos de exportação (imagem 4)
       const formatosExportacaoTexto = document.querySelector('.export-formats-label');
       const formatosExportacaoLista = document.querySelector('.export-formats-list');
       
-      if (formatosExportacaoTexto && data.howItWorks.steps.step4.exportFormats) {
-        formatosExportacaoTexto.textContent = data.howItWorks.steps.step4.exportFormats;
+      if (formatosExportacaoTexto && data.howItWorks && data.howItWorks.steps && data.howItWorks.steps.step4 && data.howItWorks.steps.step4.exportFormatsLabel) {
+        formatosExportacaoTexto.textContent = data.howItWorks.steps.step4.exportFormatsLabel;
+      }
+      
+      if (formatosExportacaoLista && data.howItWorks && data.howItWorks.steps && data.howItWorks.steps.step4 && data.howItWorks.steps.step4.exportFormats) {
+        formatosExportacaoLista.textContent = data.howItWorks.steps.step4.exportFormats;
       }
       
       console.log("Containers especiais traduzidos com sucesso");
@@ -842,7 +953,6 @@ if (taxaValorTexto && data.howItWorks.steps.step3.accuracyValue) {
     }
   }
 
-
 // Executar a tradução quando a página carregar
 document.addEventListener('DOMContentLoaded', function() {
   setTimeout(traduzirContainersEspeciais, 1000);
@@ -850,58 +960,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Executar a tradução quando as traduções forem carregadas
 document.addEventListener('languageLoaded', traduzirContainersEspeciais);
-
-// Add data-i18n attributes when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('Adding i18n attributes');
-  
-  // Menu items
-  const menuItems = document.querySelectorAll('.header-menu a');
-  menuItems.forEach((item, index) => {
-    const keys = ['howItWorks', 'integrations', 'security', 'pricing'];
-    item.setAttribute('data-i18n', `home.menu.${keys[index]}`);
-  });
-
-  // Hero section
-  const heroTitle = document.querySelector('#hero h1');
-  if (heroTitle) {
-    heroTitle.setAttribute('data-i18n-html', 'home.hero.mainTitle');
-  }
-
-  const heroSubtitle = document.querySelector('#hero p');
-  if (heroSubtitle) {
-    heroSubtitle.setAttribute('data-i18n', 'home.hero.subtitle');
-  }
-
-  // How it works section
-  const howItWorksTitle = document.querySelector('#como-funciona h2');
-  if (howItWorksTitle) {
-    howItWorksTitle.setAttribute('data-i18n', 'home.howItWorks.title');
-  }
-
-  const howItWorksSubtitle = document.querySelector('#como-funciona .subtitle-gray');
-  if (howItWorksSubtitle) {
-    howItWorksSubtitle.setAttribute('data-i18n', 'home.howItWorks.subtitle');
-  }
-
-  // Steps
-  const steps = document.querySelectorAll('.step');
-  steps.forEach((step, index) => {
-    const title = step.querySelector('h3');
-    const description = step.querySelector('p');
-    if (title) {
-      title.setAttribute('data-i18n', `home.howItWorks.steps.step${index + 1}.title`);
-    }
-    if (description) {
-      description.setAttribute('data-i18n', `home.howItWorks.steps.step${index + 1}.description`);
-    }
-  });
-
-  // CTA button
-  const ctaBtn = document.querySelector('.header-cta-btn');
-  if (ctaBtn) {
-    ctaBtn.setAttribute('data-i18n', 'home.cta.talkToTeam');
-  }
-});
 
 window.changeLanguage = changeLanguage;

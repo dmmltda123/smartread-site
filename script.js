@@ -1,3 +1,14 @@
+// Definição global da função changeLanguage
+function changeLanguage(lang) {
+    console.log('Language change requested to:', lang);
+    loadAndSetLanguage(lang);
+    setTimeout(function() {
+      traduzirContainersEspeciais();
+    }, 500);
+  }
+  
+  // Garantir que está no escopo global
+  window.changeLanguage = changeLanguage;
 // === Smooth Scrolling ===
 document.querySelectorAll('header a[href^="#"], footer a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -324,12 +335,19 @@ function closeLanguageMenu(event) {
     const languageSelector = document.querySelector('.language-selector');
     const arrow = document.querySelector('.arrow-down');
     
+    // Verifica se o clique foi em um botão de idioma
+    if (event.target.closest('.language-option')) {
+        return; // Não fecha o menu se clicou em uma opção de idioma
+    }
+    
     if (!languageSelector.contains(event.target)) {
         menu.classList.remove('show');
         arrow.style.transform = 'rotate(0deg)';
         document.removeEventListener('click', closeLanguageMenu);
     }
 }
+
+
 
 // Add click event listeners when DOM loads
 document.addEventListener('DOMContentLoaded', function() {
@@ -348,6 +366,8 @@ document.addEventListener('DOMContentLoaded', function() {
             changeLanguage(lang);
         });
     });
+
+    
 
     // Add click listener to language button
     const languageBtn = document.querySelector('.language-btn');
@@ -465,6 +485,7 @@ function updateContent() {
         if (howItWorksSubtitle && data.howItWorks) {
             howItWorksSubtitle.textContent = data.howItWorks.subtitle;
         }
+        
 
         // Update steps
         document.querySelectorAll('.step').forEach((step, index) => {
@@ -638,43 +659,53 @@ function updateContent() {
         }
 
         // Seção de preços (restaurado para preencher currency, amount e unit separadamente)
-        const pricingSection = translations[currentLanguage].home.pricing;
-        if (pricingSection) {
-            const pricingTitle = document.querySelector('#precos h2');
-            if (pricingTitle) pricingTitle.textContent = pricingSection.title;
-            const pricingSubtitle = document.querySelector('#precos .section-subtitle');
-            if (pricingSubtitle) pricingSubtitle.textContent = pricingSection.subtitle;
-            const pricingCards = document.querySelectorAll('#precos .pricing-card');
-            if (pricingCards.length && pricingSection.plans) {
-                pricingCards.forEach((card, idx) => {
-                    const plan = pricingSection.plans[idx];
-                    if (plan) {
-                        const cardTitle = card.querySelector('h3');
-                        if (cardTitle) cardTitle.textContent = plan.name;
-                        // Preço
-                        const priceCurrency = card.querySelector('.price .currency');
-                        const priceAmount = card.querySelector('.price .amount');
-                        const priceUnit = card.querySelector('.price .unit');
-                        if (priceCurrency) priceCurrency.textContent = plan.currency || '';
-                        if (priceAmount) priceAmount.textContent = plan.price || '';
-                        if (priceUnit) {
-                            console.log('Atualizando .unit para:', plan.unit, 'no card', idx);
-                            priceUnit.textContent = plan.unit || '';
-                        } else {
-                            console.warn('Não encontrou .unit no card', idx);
-                        }
-                        // Detalhes
-                        const details = card.querySelectorAll('ul.features li');
-                        if (details && plan.details) {
-                            details.forEach((li, i) => {
-                                li.textContent = plan.details[i] || '';
-                            });
-                        }
-                    }
-                });
+const pricingSection = translations[currentLanguage].home.pricing;
+if (pricingSection) {
+    const pricingTitle = document.querySelector('#precos h2');
+    if (pricingTitle) pricingTitle.textContent = pricingSection.title;
+    const pricingSubtitle = document.querySelector('#precos .section-subtitle');
+    if (pricingSubtitle) pricingSubtitle.textContent = pricingSection.subtitle;
+    const pricingCards = document.querySelectorAll('#precos .pricing-card');
+    if (pricingCards.length && pricingSection.plans) {
+        pricingCards.forEach((card, idx) => {
+            const plan = pricingSection.plans[idx];
+            if (plan) {
+                const cardTitle = card.querySelector('h3');
+                if (cardTitle) cardTitle.textContent = plan.name;
+                // Preço
+                const priceCurrency = card.querySelector('.price .currency');
+                const priceAmount = card.querySelector('.price .amount');
+                const priceUnit = card.querySelector('.price .unit');
+                if (priceCurrency) priceCurrency.textContent = plan.currency || '';
+                if (priceAmount) priceAmount.textContent = plan.price || '';
+                if (priceUnit) {
+                    console.log('Atualizando .unit para:', plan.unit, 'no card', idx);
+                    priceUnit.textContent = plan.unit || '';
+                } else {
+                    console.warn('Não encontrou .unit no card', idx);
+                }
+                // Detalhes
+                const details = card.querySelectorAll('ul.features li');
+                if (details && plan.details) {
+                    details.forEach((li, i) => {
+                        li.textContent = plan.details[i] || '';
+                    });
+                }
+                // Traduzir botão "Começar agora"
+                const startButton = card.querySelector('.pricing-button span');
+                if (startButton && plan.button) {
+                    console.log('Traduzindo botão para:', plan.button, 'no card', idx);
+                    startButton.textContent = plan.button;
+                }
             }
-        }
-
+        });
+    }
+}
+// Adicionar tradução para os botões "Começar agora"
+const startButton = card.querySelector('.pricing-button span');
+if (startButton && plan.button) {
+    startButton.textContent = plan.button;
+}
         // Rodapé (corrigido para nova estrutura)
         const footerSection = translations[currentLanguage].home.footer;
         if (footerSection) {
@@ -746,11 +777,79 @@ function updateUIElements(lang) {
     arrow.style.transform = 'rotate(0deg)';
 }
 
-// This function will be called by the click event listeners
-function changeLanguage(lang) {
-    console.log('Change language called with:', lang);
-    loadAndSetLanguage(lang);
+// Função para traduzir containers específicos
+function traduzirContainersEspeciais() {
+    // Verificar se as traduções foram carregadas
+    if (!translations[currentLanguage] || !translations[currentLanguage].home) {
+      console.log("Traduções ainda não carregadas");
+      return;
+    }
+    
+    try {
+      const data = translations[currentLanguage].home;
+      
+      // 1. Container de formatos suportados (imagem 1)
+      const formatosSuportadosTexto = document.querySelector('.label-supported-formats');
+      const formatosListaTexto = document.querySelector('.formats-list');
+      
+      if (formatosSuportadosTexto && data.howItWorks.steps.step1.labelSupportedFormats) {
+        formatosSuportadosTexto.textContent = data.howItWorks.steps.step1.labelSupportedFormats;
+      }
+      
+      if (formatosListaTexto && data.howItWorks.steps.step1.formats) {
+        formatosListaTexto.textContent = data.howItWorks.steps.step1.formats;
+      }
+      
+      // 2. Container de tempo de processamento (imagem 2)
+      const tempoProcessamentoTexto = document.querySelector('.processing-time-label');
+      const tempoValorTexto = document.querySelector('.processing-time-value');
+      
+      if (tempoProcessamentoTexto && data.howItWorks.steps.step2.processingTime) {
+        tempoProcessamentoTexto.textContent = data.howItWorks.steps.step2.processingTime;
+      }
+      
+      // Traduzir o valor do tempo de processamento
+      if (tempoValorTexto && data.howItWorks.steps.step2.processingTimeValue) {
+        tempoValorTexto.textContent = data.howItWorks.steps.step2.processingTimeValue;
+        console.log("Valor do tempo de processamento traduzido para:", data.howItWorks.steps.step2.processingTimeValue);
+      }
+      
+    // 3. Container de taxa de precisão (imagem 3)
+const taxaPrecisaoTexto = document.querySelector('.accuracy-label');
+const taxaValorTexto = document.querySelector('.accuracy-value');
+
+if (taxaPrecisaoTexto && data.howItWorks.steps.step3.accuracy) {
+  taxaPrecisaoTexto.textContent = data.howItWorks.steps.step3.accuracy;
 }
+
+// ADICIONAR ESTA PARTE PARA TRADUZIR O VALOR
+if (taxaValorTexto && data.howItWorks.steps.step3.accuracyValue) {
+  taxaValorTexto.textContent = data.howItWorks.steps.step3.accuracyValue;
+  console.log("Valor da taxa de precisão traduzido para:", data.howItWorks.steps.step3.accuracyValue);
+}
+      
+      // 4. Container de formatos de exportação (imagem 4)
+      const formatosExportacaoTexto = document.querySelector('.export-formats-label');
+      const formatosExportacaoLista = document.querySelector('.export-formats-list');
+      
+      if (formatosExportacaoTexto && data.howItWorks.steps.step4.exportFormats) {
+        formatosExportacaoTexto.textContent = data.howItWorks.steps.step4.exportFormats;
+      }
+      
+      console.log("Containers especiais traduzidos com sucesso");
+    } catch (error) {
+      console.error("Erro ao traduzir containers especiais:", error);
+    }
+  }
+
+
+// Executar a tradução quando a página carregar
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(traduzirContainersEspeciais, 1000);
+});
+
+// Executar a tradução quando as traduções forem carregadas
+document.addEventListener('languageLoaded', traduzirContainersEspeciais);
 
 // Add data-i18n attributes when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -804,3 +903,5 @@ document.addEventListener('DOMContentLoaded', function() {
     ctaBtn.setAttribute('data-i18n', 'home.cta.talkToTeam');
   }
 });
+
+window.changeLanguage = changeLanguage;

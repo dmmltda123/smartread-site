@@ -33,15 +33,18 @@
                     "formats": "Excel, PDF, JPEG, Word, JSON, XML, CSV"
                 },
                 "step2": {
-                    "title": "AI work for you",
-                    "description": "Our AI analyzes the documents, identifying and extracting information with high precision",
-                    "processingTime": "Average processing time: 20 seconds per document"
+                "title": "AI work for you",
+                 "description": "Our AI analyzes the documents, identifying and extracting information with high precision",
+                "processingTime": "Average processing time:",
+                "processingTimeLabel": "Average processing time",
+                "processingTimeValue": "20 seconds per document"
                 },
                 "step3": {
-                    "title": "Review and adjust only if necessary",
-                    "description": "You have full control to review or correct data before finalizing",
-                    "accuracy": "Accuracy rate: 87%"
-                },
+  "title": "Review and adjust only if necessary",
+  "description": "You have full control to review or correct data before finalizing",
+  "accuracy": "Accuracy rate:",
+  "accuracyValue": "87% accuracy"
+},
                 "step4": {
                     "title": "Download or integrate the data",
                     "description": "Export results in Excel, XML, TXT, JSON, and use them directly in your systems, ERPs, or internal processes",

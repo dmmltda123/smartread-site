@@ -30,24 +30,29 @@
 "subtitle": "Em 4 etapas, seus documentos viram dados prontos com IA",
 "steps": {
 "step1": {
-"title": "1. Envie seus documentos com um clique",
-"description": "Faça upload dos seus documentos em diversos formatos ou arraste-os diretamente para a plataforma",
-"formats": "Excel, PDF, JPEG, Word, JSON, XML, CSV"
+  "title": "1. Envie seus documentos com um clique",
+  "description": "Faça upload dos seus documentos em diversos formatos ou arraste-os diretamente para a plataforma",
+  "labelSupportedFormats": "Múltiplos formatos suportados",
+  "formats": "Excel, PDF, JPEG, Word, JSON, XML, CSV"
 },
 "step2": {
-"title": "2. Deixe a IA trabalhar por você",
-"description": "Nossa IA analisa os documentos, identificando e extraindo informações com alta precisão",
-"processingTime": "Tempo médio de processamento: 20 segundos por documento"
-},
+    "title": "2. Deixe a IA trabalhar por você",
+    "description": "Nossa IA analisa os documentos, identificando e extraindo informações com alta precisão",
+    "processingTime": "Tempo médio de processamento: 20 segundos por documento",
+    "processingTimeLabel": "Tempo médio de processamento",
+    "processingTimeValue": "20 segundos por documento"
+  },
 "step3": {
-"title": "3. Revise e ajuste apenas se necessário",
-"description": "Você tem controle total para revisar ou corrigir dados antes de finalizar",
-"accuracy": "Taxa de precisão: 87% de acertos"
+  "title": "3. Revise e ajuste apenas se necessário",
+  "description": "Você tem controle total para revisar ou corrigir dados antes de finalizar",
+  "accuracy": "Taxa de precisão: 87% de acertos",
+  "accuracyLabel": "Taxa de precisão"
 },
 "step4": {
-"title": "4. Baixe ou integre os dados",
-"description": "Exporte resultados em Excel, XML, TXT, Json e use-os diretamente nos seus sistemas, ERP's ou processos internos",
-"exportFormats": "Excel, TXT, XML, JSON, Excel, PDF"
+  "title": "4. Baixe ou integre os dados",
+  "description": "Exporte resultados em Excel, XML, TXT, Json e use-os diretamente nos seus sistemas, ERP's ou processos internos",
+  "exportFormats": "Excel, TXT, XML, JSON, Excel, PDF",
+  "exportFormatsLabel": "Formatos de exportação"
 }
 }
 },

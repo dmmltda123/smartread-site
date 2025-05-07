@@ -1,118 +1,125 @@
 {
     "home": {
-    "hero": {
-    "mainTitle": "Elimine el 87% de la digitación en Comercio Exterior",
-    "subtitle": "Reemplace horas de digitación por segundos de procesamiento utilizando la inteligencia artificial más avanzada",
-    "description": "Facturas comerciales, listas de empaque, conocimientos de embarque, documentos financieros y mucho más.",
-    "buttons": {
-    "insert": "Insertar / Cargar",
-    "upload": "Cargar",
-    "ai": "IA",
-    "excel": "Excel",
-    "erp": "ERP",
-    "systems": "Sistemas",
-    "email": "Su correo electrónico",
-    "tryNow": "Pruebe ahora"
-    }
-    },
-    "howItWorks": {
-    "title": "Cómo funciona Smart Read",
-    "subtitle": "En 4 pasos, sus documentos se convierten en datos listos con IA",
-    "steps": {
-    "step1": {
-    "title": "Envíe sus documentos con un clic",
-    "description": "Cargue sus documentos en varios formatos o arrástrelos directamente a la plataforma",
-    "formats": "Excel, PDF, JPEG, Word, JSON, XML, CSV"
-    },
-    "step2": {
-    "title": "Deje que la IA trabaje por usted",
-    "description": "Nuestra IA analiza los documentos, identificando y extrayendo información con alta precisión",
-    "processingTime": "Tiempo promedio de procesamiento: 20 segundos por documento"
-    },
-    "step3": {
-    "title": "Revise y ajuste solo si es necesario",
-    "description": "Usted tiene control total para revisar o corregir los datos antes de finalizar",
-    "accuracy": "Tasa de precisión: 87% de aciertos"
-    },
-    "step4": {
-    "title": "Descargue o integre los datos",
-    "description": "Exporte resultados en Excel, XML, TXT, JSON y utilícelos directamente en sus sistemas, ERPs o procesos internos",
-    "exportFormats": "Excel, TXT, XML, JSON, Excel, PDF"
-    }
-    }
-    },
-    "integration": {
-    "title": "Integre Smart Read a sus sistemas actuales",
-    "description": "Integración plug and play con: Excel, SAP, Totvs, Dati Import, One Source y más",
-    "systems": "Excel, SAP, Totvs, Dati Import, One Source"
-    },
-    "spreadsheets": {
-    "title": "Lleve sus datos a cualquier hoja de cálculo",
-    "description": "De Smart Read directamente a las hojas de cálculo que ya utiliza en su día a día",
-    "excel": {
-    "title": "Excel",
-    "description": "Genere hojas de cálculo Excel completas a partir de los datos extraídos, con columnas y cálculos listos",
-    "features": ["Exportación con un clic", "Columnas organizadas", "Fórmulas automáticas"]
-    },
-    "googleSheets": {
-    "title": "Google Sheets",
-    "description": "Envíe datos directamente a Google Sheets, colaborando en tiempo real con su equipo, desde donde esté",
-    "features": ["Sincronización automática", "Compartición fácil", "Actualizaciones en tiempo real"]
-    },
-    "csvXlsx": {
-    "title": "CSV/XLSX",
-    "description": "Exporte a formatos universales compatibles con cualquier software de hojas de cálculo o base de datos",
-    "features": ["Compatibilidad universal", "Personalización de delimitadores", "Codificación configurable"]
-    }
-    },
-    "security": {
-    "title": "Protección total de los datos",
-    "description": "Certificaciones globales, servidores robustos y encriptación para garantizar la protección de su información sensible",
-    "encryption": {
-    "title": "Encriptación avanzada",
-    "description": "Todos los datos enviados y procesados están encriptados de extremo a extremo, garantizando que solo usted tenga acceso a la información de su negocio. Ningún precio, contrato o documento queda expuesto"
-    },
-    "infrastructure": {
-    "title": "Infraestructura robusta AWS",
-    "description": "Alojamiento en la nube de AWS con arquitectura escalable, copias de seguridad automáticas y redundancia geográfica. Su negocio operando con la misma tecnología que las principales empresas del mundo"
-    },
-    "certifications": {
-    "title": "Certificaciones y cumplimiento",
-    "description": "Seguimos las principales normas internacionales",
-    "standards": "ISO 27001, ISO 27017, ISO 27018, PCI-DSS, SOC 1/2/3, LGPD y GDPR"
-    }
+    "menu": {
+      "howItWorks": "Cómo funciona",
+      "integrations": "Integraciones",
+      "security": "Seguridad",
+      "pricing": "Precios"
     },
     "cta": {
-    "title": "Vea Smart Read en acción ahora mismo",
-    "description": "Cargue cualquier documento y vea sus datos extraídos en segundos con inteligencia artificial",
-    "uploadText": "Cargue su documento",
-    "dragDropText": "Arrastre, suelte o haga clic para cargar su archivo",
-    "clickText": "Haga clic para seleccionar o arrastre aquí",
-    "startButton": "Comience gratis ahora"
+      "talkToTeam": "Habla con nuestro equipo",
+      "startButton": "Comience gratis ahora"
+    },
+    "hero": {
+      "mainTitle": "Elimine el <span class=\"gradient-text-hero\">87%</span> de la digitación en <span class=\"gradient-text-hero\">Comercio Exterior</span>",
+      "subtitle": "Reemplace horas de digitación por segundos de procesamiento utilizando la inteligencia artificial más avanzada",
+      "description": "Facturas comerciales, listas de empaque, conocimientos de embarque, documentos financieros y mucho más.",
+      "buttons": {
+        "insert": "Insertar / Cargar",
+        "upload": "Cargar",
+        "ai": "IA",
+        "excel": "Excel",
+        "erp": "ERP",
+        "systems": "Sistemas",
+        "email": "Su correo electrónico",
+        "tryNow": "Pruebe ahora"
+      }
+    },
+    "howItWorks": {
+      "title": "Cómo funciona Smart Read",
+      "subtitle": "En 4 pasos, sus documentos se convierten en datos listos con IA",
+      "steps": {
+        "step1": {
+          "title": "Envíe sus documentos con un clic",
+          "description": "Cargue sus documentos en varios formatos o arrástrelos directamente a la plataforma",
+          "labelSupportedFormats": "Múltiples formatos soportados",
+          "formats": "Excel, PDF, JPEG, Word, JSON, XML, CSV"
+        },
+        "step2": {
+          "title": "Deje que la IA trabaje por usted",
+          "description": "Nuestra IA analiza los documentos, identificando y extrayendo información con alta precisión",
+          "processingTime": "Tiempo promedio de procesamiento: 20 segundos por documento",
+          "processingTimeLabel": "Tiempo promedio de procesamiento",
+          "processingTimeValue": "20 segundos por documento"
+        },
+        "step3": {
+          "title": "Revise y ajuste solo si es necesario",
+          "description": "Usted tiene control total para revisar o corregir los datos antes de finalizar",
+          "accuracy": "Tasa de precisión: 87% de aciertos",
+          "accuracyLabel": "Tasa de precisión"
+        },
+        "step4": {
+          "title": "Descargue o integre los datos",
+          "description": "Exporte resultados en Excel, XML, TXT, JSON y utilícelos directamente en sus sistemas, ERPs o procesos internos",
+          "exportFormats": "Excel, TXT, XML, JSON, Excel, PDF",
+          "exportFormatsLabel": "Formatos de exportación"
+        }
+      }
+    },
+    "integration": {
+      "title": "Integre Smart Read a sus sistemas actuales",
+      "description": "Integración plug and play con: Excel, SAP, Totvs, Dati Import, One Source y más",
+      "systems": "Excel, SAP, Totvs, Dati Import, One Source"
+    },
+    "spreadsheets": {
+      "title": "Lleve sus datos a cualquier hoja de cálculo",
+      "description": "De Smart Read directamente a las hojas de cálculo que ya utiliza en su día a día",
+      "excel": {
+        "title": "Excel",
+        "description": "Genere hojas de cálculo Excel completas a partir de los datos extraídos, con columnas y cálculos listos",
+        "features": ["Exportación con un clic", "Columnas organizadas", "Fórmulas automáticas"]
+      },
+      "googleSheets": {
+        "title": "Google Sheets",
+        "description": "Envíe datos directamente a Google Sheets, colaborando en tiempo real con su equipo, desde donde esté",
+        "features": ["Sincronización automática", "Compartición fácil", "Actualizaciones en tiempo real"]
+      },
+      "csvXlsx": {
+        "title": "CSV/XLSX",
+        "description": "Exporte a formatos universales compatibles con cualquier software de hojas de cálculo o base de datos",
+        "features": ["Compatibilidad universal", "Personalización de delimitadores", "Codificación configurable"]
+      }
+    },
+    "security": {
+      "title": "Protección total de los datos",
+      "description": "Certificaciones globales, servidores robustos y encriptación para garantizar la protección de su información sensible",
+      "encryption": {
+        "title": "Encriptación avanzada",
+        "description": "Todos los datos enviados y procesados están encriptados de extremo a extremo, garantizando que solo usted tenga acceso a la información de su negocio. Ningún precio, contrato o documento queda expuesto"
+      },
+      "infrastructure": {
+        "title": "Infraestructura robusta AWS",
+        "description": "Alojamiento en la nube de AWS con arquitectura escalable, copias de seguridad automáticas y redundancia geográfica. Su negocio operando con la misma tecnología que las principales empresas del mundo"
+      },
+      "certifications": {
+        "title": "Certificaciones y cumplimiento",
+        "description": "Seguimos las principales normas internacionales",
+        "standards": "ISO 27001, ISO 27017, ISO 27018, PCI-DSS, SOC 1/2/3, LGPD y GDPR"
+      }
     },
     "testimonials": {
-    "title": "Lo que dicen nuestros clientes",
-    "subtitle": "Empresas de diversos sectores ya han transformado sus procesos con Smart Read",
-    "items": [
-    {
-    "name": "João Silva",
-    "role": "Director de Operaciones",
-    "company": "LogTech Brasil",
-    "text": "El Smart Read redujo nuestro tiempo de procesamiento de documentos en un 75%. Lo que tomaba días ahora se hace en horas, con mucha más precisión."
-    },
-    {
-    "name": "Maria Santos",
-    "role": "CTO",
-    "company": "Importadora Global",
-    "text": "La integración con nuestro ERP fue sorprendentemente fácil. Ahora tenemos un flujo continuo de datos de los documentos a nuestros sistemas."
-    },
-    {
-    "name": "Carlos Mendes",
-    "role": "Gerente Financiero",
-    "company": "TechImport",
-    "text": "La precisión de Smart Read en la extracción de datos de facturas fiscales e internacionales nos ayudó a eliminar errores manuales y agilizar nuestros procesos."
-    }
-    ]
+      "title": "Lo que dicen nuestros clientes",
+      "subtitle": "Empresas de diversos sectores ya han transformado sus procesos con Smart Read",
+      "items": [
+        {
+          "name": "João Silva",
+          "role": "Director de Operaciones",
+          "company": "LogTech Brasil",
+          "text": "El Smart Read redujo nuestro tiempo de procesamiento de documentos en un 75%. Lo que tomaba días ahora se hace en horas, con mucha más precisión."
+        },
+        {
+          "name": "Maria Santos",
+          "role": "CTO",
+          "company": "Importadora Global",
+          "text": "La integración con nuestro ERP fue sorprendentemente fácil. Ahora tenemos un flujo continuo de datos de los documentos a nuestros sistemas."
+        },
+        {
+          "name": "Carlos Mendes",
+          "role": "Gerente Financiero",
+          "company": "TechImport",
+          "text": "La precisión de Smart Read en la extracción de datos de facturas fiscales e internacionales nos ayudó a eliminar errores manuales y agilizar nuestros procesos."
+        }
+      ]
     }
     }
     }
